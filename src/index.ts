@@ -9,4 +9,6 @@ export const app = new App({
 
 errorHandler(app.app);
 
-app.listen();
+if (process.env.NODE_ENV !== 'test') {
+  app.listen();
+}

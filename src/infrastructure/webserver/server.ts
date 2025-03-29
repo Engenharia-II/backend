@@ -64,11 +64,19 @@ class App {
         process.exit(1);
       }
 
-      // eslint-disable-next-line no-console
-      console.log(
-        `App listening on the http://${this.app_domain}:${this.app_port} 🚀`
-      );
+      if (process.env.NODE_ENV !== 'test') {
+        // eslint-disable-next-line no-console
+        console.log(
+          `App listening on the http://${this.app_domain}:${this.app_port} 🚀`
+        );
+      }
     });
+  }
+
+  public async close() {
+    if (this.app) {
+      await this.app.close();
+    }
   }
 }
 
