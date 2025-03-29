@@ -1,14 +1,6 @@
-export const RegisterSchema = {
-  type: 'object',
-  properties: {
-    email: {
-      type: 'string',
-      format: 'email',
-      minLength: 1
-    },
-    name: {
-      type: 'string',
-      minLength: 1
-    }
-  }
-};
+import { z } from 'zod';
+
+export const userSchema = z.object({
+  email: z.string().email('Email inválido').min(1, 'Email é obrigatório'),
+  name: z.string().min(1, 'Nome é obrigatório')
+});

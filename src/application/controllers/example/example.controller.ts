@@ -21,8 +21,8 @@ class ExampleController {
       return reply
         .code(200)
         .send({ message: 'User created with success.', data: user });
-    } catch (error: any) {
-      return reply.code(500).send({ message: error.message });
+    } catch (error) {
+      throw error;
     }
   }
 }
