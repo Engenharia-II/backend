@@ -5,7 +5,6 @@ import {
   FastifyRequest
 } from 'fastify';
 import { AppError } from './app-error';
-import { ZodError } from 'zod';
 import { hasZodFastifySchemaValidationErrors } from 'fastify-type-provider-zod';
 
 export const errorHandler = (app: FastifyInstance) => {
