@@ -4,6 +4,10 @@ import fastify, {
   FastifyPluginCallback
 } from 'fastify';
 import config from '../config/constants';
+import {
+  serializerCompiler,
+  validatorCompiler
+} from 'fastify-type-provider-zod';
 
 interface CustomRouteHandler {
   prefix_route: string;
@@ -22,6 +26,10 @@ class App {
     this.app = fastify({
       logger: true
     });
+
+    this.app.setValidatorCompiler(validatorCompiler);
+    this.app.setSerializerCompiler(serializerCompiler);
+
     this.app.addHook('preHandler', (req, _reply, done) => {
       if (req.body) {
         req.log.info({ body: req.body }, 'parsed body');
