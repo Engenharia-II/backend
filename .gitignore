@@ -28,7 +28,7 @@ prisma/migrations/
 coverage/
 
 # IDE and Editor settings
-vscode/
+.vscode/
 .idea/
 .DS_Store
 *.swp
