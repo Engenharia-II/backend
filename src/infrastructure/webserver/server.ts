@@ -3,11 +3,14 @@ import fastify, {
   FastifyPluginAsync,
   FastifyPluginCallback
 } from 'fastify';
+import fastifySwagger from '@fastify/swagger';
 import config from '../config/constants';
 import {
+  jsonSchemaTransform,
   serializerCompiler,
   validatorCompiler
 } from 'fastify-type-provider-zod';
+import fastifySwaggerUi from '@fastify/swagger-ui';
 
 interface CustomRouteHandler {
   prefix_route: string;
@@ -30,12 +33,28 @@ class App {
     this.app.setValidatorCompiler(validatorCompiler);
     this.app.setSerializerCompiler(serializerCompiler);
 
+    this.app.register(fastifySwagger, {
+      openapi: {
+        info: {
+          title: 'CaminhoDev API Documentation',
+          description: 'API documentation for the caminhoDev',
+          version: '1.0.0'
+        }
+      },
+      transform: jsonSchemaTransform
+    });
+
     this.app.addHook('preHandler', (req, _reply, done) => {
       if (req.body) {
         req.log.info({ body: req.body }, 'parsed body');
       }
       done();
     });
+
+    this.app.register(fastifySwaggerUi, {
+      routePrefix: '/docs'
+    });
+
     this.register(appInit.plugins);
     this.routes(appInit.routes);
   }
