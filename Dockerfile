@@ -24,5 +24,5 @@ COPY . .
 EXPOSE 3333
 EXPOSE 5555
 
-# Start the application
+# Start the application and run migrations/seeding
 CMD ["sh", "-c", "npm run db:deploy && npm run dev"]
