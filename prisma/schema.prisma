@@ -14,11 +14,40 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  name      String
-  email     String   @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id            String    @id @default(uuid())
+  name          String
+  email         String    @unique
+  password      String
+  googleId      String?   @map("google_id")
+  roleId        Int       @default(1) @map("role_id")
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @default(now()) @map("updated_at")
+  lastAppAccess DateTime? @map("last_app_access")
+
+  Session Session[]
+  role    Role      @relation(fields: [roleId], references: [id])
 
   @@map("users")
+}
+
+model Role {
+  id   Int    @id @default(autoincrement())
+  name String @unique
+
+  User User[]
+
+  @@map("roles")
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  token     String
+  createdAt DateTime @default(now()) @map("created_at")
+  expiresAt DateTime @map("expires_at")
+  provider  String   @default("local")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("sessions")
 }

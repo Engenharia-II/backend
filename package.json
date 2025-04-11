@@ -1,7 +1,7 @@
 {
   "name": "caminhodev-backend",
   "version": "1.0.0",
-  "description": "O backend do sistema Ja-Estudei",
+  "description": "The backend of the CaminhoDev project",
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
@@ -17,9 +17,12 @@
     "test:clear": "jest --clearCache",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
+    "prisma:push": "prisma db push",
     "prisma:deploy": "prisma migrate deploy",
     "prisma:studio": "prisma studio",
-    "prisma:reset": "prisma migrate reset"
+    "prisma:reset": "prisma migrate reset",
+    "prisma:seed": "prisma db seed",
+    "db:deploy": "npx prisma migrate deploy && npx prisma generate && npx prisma db seed"
   },
   "repository": {
     "type": "git",
@@ -62,5 +65,8 @@
       "prettier --write",
       "eslint --fix"
     ]
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }
