@@ -24,8 +24,10 @@ model User {
   updatedAt     DateTime  @default(now()) @map("updated_at")
   lastAppAccess DateTime? @map("last_app_access")
 
-  Session Session[]
-  role    Role      @relation(fields: [roleId], references: [id])
+  Session       Session[]
+  role          Role            @relation(fields: [roleId], references: [id])
+  SubjectAccess SubjectAccess[]
+  ContentAccess ContentAccess[]
 
   @@map("users")
 }
@@ -59,7 +61,8 @@ model Subject {
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @default(now()) @map("updated_at")
 
-  topics Topic[]
+  topics        Topic[]
+  SubjectAccess SubjectAccess[]
 
   @@map("subjects")
 }
@@ -90,7 +93,32 @@ model Content {
   createdAt       DateTime @default(now()) @map("created_at")
   updatedAt       DateTime @default(now()) @map("updated_at")
 
-  topic Topic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  topic         Topic           @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  ContentAccess ContentAccess[]
 
   @@map("contents")
+}
+
+model SubjectAccess {
+  userId     String   @map("user_id")
+  subjectId  String   @map("subject_id")
+  lastAccess DateTime @map("last_access")
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  subject Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@id([userId, subjectId])
+  @@map("subject_access")
+}
+
+model ContentAccess {
+  userId     String   @map("user_id")
+  contentId  String   @map("content_id")
+  lastAccess DateTime @map("last_access")
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  content Content @relation(fields: [contentId], references: [id], onDelete: Cascade)
+
+  @@id([userId, contentId])
+  @@map("content_access")
 }
