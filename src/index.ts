@@ -1,9 +1,10 @@
 import App from '@/infrastructure/webserver/server';
 import SessionsRoute from '@/application/routes/sessions.route';
 import { errorHandler } from './infrastructure/webserver/error-handler';
+import AuthPlugin from './infrastructure/plugins/auth.plugin';
 
 export const app = new App({
-  plugins: [],
+  plugins: [AuthPlugin],
   routes: [SessionsRoute]
 });
 
