@@ -1,7 +1,11 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { UserInterface } from '@/domain/interfaces/users.interface';
-import { signUp } from '@/application/services/sessions/sessions.service';
+import {
+  signUp,
+  login
+} from '@/application/services/sessions/sessions.service';
 import { checkIfUserAlreadyExistsByEmail } from '@/application/services/user/user.service';
+import { ResponseLoginInteface } from '@/domain/interfaces/sessions.interface';
 
 class SessionsController {
   /**
@@ -56,6 +60,34 @@ class SessionsController {
       return reply.code(200).send({
         message: 'Usuário criado com sucesso.',
         data: { id: user.id }
+      });
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async login(
+    request: FastifyRequest,
+    reply: FastifyReply
+  ): Promise<ResponseLoginInteface> {
+    try {
+      const { email, password } = request.body as UserInterface;
+
+      const user = await login(email, password);
+
+      const token = await reply.jwtSign({ id: user.id }, { expiresIn: '7d' });
+
+      reply.setCookie('token', token, {
+        path: '/',
+        secure: true,
+        sameSite: true,
+        httpOnly: true,
+        maxAge: 7 * 24 * 60 * 60 // 7 days
+      });
+
+      return reply.code(200).send({
+        message: 'Login realizado com sucesso.',
+        data: { id: user.id, token }
       });
     } catch (error) {
       throw error;
