@@ -23,11 +23,17 @@ export default fastifyPlugin(
       async function (
         this: FastifyInstance,
         req: FastifyRequest,
-        _reply: FastifyReply
+        reply: FastifyReply
       ) {
         try {
           await req.jwtVerify();
         } catch (err) {
+          reply.clearCookie(config.cookie.cookieName, {
+            path: '/',
+            secure: true,
+            sameSite: true,
+            httpOnly: true
+          });
           if (err instanceof Error) {
             throw new AppError(`Unauthorized, ${err.message}`, 401);
           }

@@ -30,6 +30,14 @@ class SessionsRoute {
       },
       SessionsController.login
     );
+
+    fastifyWithZod.post(
+      '/logout',
+      {
+        preHandler: fastify.authenticate
+      },
+      SessionsController.logout
+    );
   }
 }
 

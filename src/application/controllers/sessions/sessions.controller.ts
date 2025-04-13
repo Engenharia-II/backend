@@ -6,7 +6,7 @@ import {
 } from '@/application/services/sessions/sessions.service';
 import { checkIfUserAlreadyExistsByEmail } from '@/application/services/user/user.service';
 import { ResponseLoginInteface } from '@/domain/interfaces/sessions.interface';
-
+import config from '@/infrastructure/config/constants';
 class SessionsController {
   /**
    * @description Create a new user account
@@ -88,6 +88,26 @@ class SessionsController {
       return reply.code(200).send({
         message: 'Login realizado com sucesso.',
         data: { id: user.id, token }
+      });
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async logout(
+    _request: FastifyRequest,
+    reply: FastifyReply
+  ): Promise<void> {
+    try {
+      reply.clearCookie(config.cookie.cookieName, {
+        path: '/',
+        secure: true,
+        sameSite: true,
+        httpOnly: true
+      });
+
+      return reply.code(200).send({
+        message: 'Logout realizado com sucesso.'
       });
     } catch (error) {
       throw error;
