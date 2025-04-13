@@ -7,7 +7,9 @@ import { AppError } from '../webserver/app-error';
 
 export default fastifyPlugin(
   async (fastify) => {
-    fastify.register(fastifyCookie);
+    fastify.register(fastifyCookie, {
+      secret: config.cookie.secret
+    });
     fastify.register(fastifyJwt, {
       secret: config.jwt.secret,
       cookie: {
