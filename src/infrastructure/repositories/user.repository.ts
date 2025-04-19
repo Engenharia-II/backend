@@ -55,6 +55,34 @@ export class UserRepository {
       throw new Error('Error finding user by email: ' + error);
     }
   }
+
+  async getById(id: string): Promise<UserInterface | null> {
+    try {
+      const user = await this.db.user.findUnique({
+        where: { id },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          password: true,
+          roleId: true,
+          googleId: true,
+          createdAt: true,
+          updatedAt: true,
+          lastAppAccess: true,
+          role: {
+            select: {
+              id: true,
+              name: true
+            }
+          }
+        }
+      });
+      return user;
+    } catch (error) {
+      throw new Error('Error getting user by id: ' + error);
+    }
+  }
 }
 
 export default new UserRepository();
