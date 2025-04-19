@@ -15,6 +15,14 @@ class UsersRoute {
       },
       UsersController.getUserById
     );
+
+    fastifyWithZod.get(
+      '/list-all',
+      {
+        preHandler: fastify.authenticate
+      },
+      UsersController.listAllUsers
+    );
   }
 }
 
