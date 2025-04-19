@@ -1,3 +1,4 @@
+import PasswordHash from '@/application/security/bcrypt';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -35,7 +36,7 @@ async function main() {
       create: {
         name: adminUser.name,
         email: adminUser.email,
-        password: adminUser.password,
+        password: await PasswordHash.hash(adminUser.password),
         roleId: adminUser.roleId
       }
     });
