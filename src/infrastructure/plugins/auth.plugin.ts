@@ -26,7 +26,8 @@ export default fastifyPlugin(
         reply: FastifyReply
       ) {
         try {
-          await req.jwtVerify();
+          const decoded = await req.jwtVerify<{ id: string }>();
+          req.user = { id: decoded.id };
         } catch (err) {
           reply.clearCookie(config.cookie.cookieName, {
             path: '/',
