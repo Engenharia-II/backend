@@ -12,3 +12,15 @@ export const checkIfUserAlreadyExistsByEmail = async (email: string) => {
     throw error;
   }
 };
+
+export const getUserById = async (id: string) => {
+  try {
+    const user = await userRepository.getById(id);
+    if (!user) {
+      throw new AppError('Usuário não encontrado', 404);
+    }
+    return user;
+  } catch (error) {
+    throw error;
+  }
+};
