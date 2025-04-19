@@ -83,6 +83,33 @@ export class UserRepository {
       throw new Error('Error getting user by id: ' + error);
     }
   }
+
+  async listAll(): Promise<UserInterface[]> {
+    try {
+      const users = await this.db.user.findMany({
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          password: true,
+          roleId: true,
+          googleId: true,
+          createdAt: true,
+          updatedAt: true,
+          lastAppAccess: true,
+          role: {
+            select: {
+              id: true,
+              name: true
+            }
+          }
+        }
+      });
+      return users;
+    } catch (error) {
+      throw new Error('Error listing all users: ' + error);
+    }
+  }
 }
 
 export default new UserRepository();
