@@ -80,3 +80,12 @@ export const updateUser = async ({
     throw error;
   }
 };
+
+export const deleteUser = async (id: string) => {
+  try {
+    await getUserById(id);
+    await userRepository.delete(id);
+  } catch (error) {
+    throw error;
+  }
+};
