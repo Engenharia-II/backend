@@ -75,9 +75,13 @@ class SessionsController {
 
       const user = await login(email, password);
 
+      if (!user.id) {
+        throw new Error('User ID is required');
+      }
+
       const token = await reply.jwtSign({ id: user.id }, { expiresIn: '7d' });
 
-      reply.setCookie('token', token, {
+      reply.setCookie(config.cookie.cookieName, token, {
         path: '/',
         secure: true,
         sameSite: true,

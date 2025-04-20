@@ -55,6 +55,88 @@ export class UserRepository {
       throw new Error('Error finding user by email: ' + error);
     }
   }
+
+  async getById(id: string): Promise<UserInterface | null> {
+    try {
+      const user = await this.db.user.findUnique({
+        where: { id },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          password: true,
+          roleId: true,
+          googleId: true,
+          createdAt: true,
+          updatedAt: true,
+          lastAppAccess: true,
+          role: {
+            select: {
+              id: true,
+              name: true
+            }
+          }
+        }
+      });
+      return user;
+    } catch (error) {
+      throw new Error('Error getting user by id: ' + error);
+    }
+  }
+
+  async listAll(): Promise<UserInterface[]> {
+    try {
+      const users = await this.db.user.findMany({
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          password: true,
+          roleId: true,
+          googleId: true,
+          createdAt: true,
+          updatedAt: true,
+          lastAppAccess: true,
+          role: {
+            select: {
+              id: true,
+              name: true
+            }
+          }
+        }
+      });
+      return users;
+    } catch (error) {
+      throw new Error('Error listing all users: ' + error);
+    }
+  }
+
+  async update({ name, email, password, id }: UserInterface) {
+    try {
+      const user = await this.db.user.update({
+        where: { id },
+        data: {
+          name,
+          email,
+          password,
+          updatedAt: new Date()
+        }
+      });
+      return user;
+    } catch (error) {
+      throw new Error('Error updating user: ' + error);
+    }
+  }
+
+  async delete(id: string): Promise<void> {
+    try {
+      await this.db.user.delete({
+        where: { id }
+      });
+    } catch (error) {
+      throw new Error('Error deleting user: ' + error);
+    }
+  }
 }
 
 export default new UserRepository();
