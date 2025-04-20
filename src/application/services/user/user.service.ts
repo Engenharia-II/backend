@@ -1,3 +1,5 @@
+import { UserInterface } from '@/domain/interfaces/users.interface';
+import PasswordHash from '@/application/security/bcrypt';
 import { USER_ADMIN_ROLE_ID } from '@/infrastructure/config/constants';
 import userRepository from '@/infrastructure/repositories/user.repository';
 import { AppError } from '@/infrastructure/webserver/app-error';
@@ -45,6 +47,35 @@ export const listAllUsers = async () => {
       throw new AppError('Nenhum usuário encontrado', 404);
     }
     return users;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updateUser = async ({
+  id,
+  name,
+  email,
+  password
+}: UserInterface) => {
+  try {
+    await getUserById(id as string);
+
+    const userEmail = await userRepository.findByEmail(email);
+    if (userEmail && userEmail.id !== id) {
+      throw new AppError('Email já cadastrado', 400);
+    }
+
+    if (password) {
+      const hashedPassword = await PasswordHash.hash(password);
+      password = hashedPassword;
+    }
+
+    const user = await userRepository.update({ id, name, email, password });
+    if (!user) {
+      throw new AppError('Usuário não encontrado', 404);
+    }
+    return user;
   } catch (error) {
     throw error;
   }
