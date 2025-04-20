@@ -1,6 +1,7 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
 import UsersController from '../controllers/users/users.controller';
+import { updateUserSchema } from '@/domain/validations/user.validation';
 
 class UsersRoute {
   public prefix_route = '/users';
@@ -21,7 +22,18 @@ class UsersRoute {
       {
         preHandler: fastify.authenticate
       },
-      UsersController.listAllUsers
+      UsersController.listUsers
+    );
+
+    fastifyWithZod.put(
+      '/update',
+      {
+        preHandler: fastify.authenticate,
+        schema: {
+          body: updateUserSchema
+        }
+      },
+      UsersController.updateUser
     );
   }
 }
