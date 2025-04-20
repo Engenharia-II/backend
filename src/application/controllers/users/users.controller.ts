@@ -1,6 +1,7 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import {
   checkIFUserIsAdmin,
+  deleteUser,
   getUserById,
   listAllUsers,
   updateUser
@@ -48,6 +49,25 @@ class UsersController {
         password
       });
       return reply.status(200).send(updatedUser);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async deleteUser(request: FastifyRequest, reply: FastifyReply) {
+    try {
+      const userId = request.user.id;
+      await checkIFUserIsAdmin(userId);
+      const { id } = request.body as { id: string };
+
+      if (userId === id) {
+        throw new AppError('Você não pode deletar sua própria conta', 400);
+      }
+
+      const deletedUser = await deleteUser(id);
+      return reply
+        .status(200)
+        .send({ message: 'Usuário deletado com sucesso', data: deletedUser });
     } catch (error) {
       throw error;
     }
