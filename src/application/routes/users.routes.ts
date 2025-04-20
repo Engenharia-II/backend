@@ -1,7 +1,10 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
 import UsersController from '../controllers/users/users.controller';
-import { updateUserSchema } from '@/domain/validations/user.validation';
+import {
+  idUserSchema,
+  updateUserSchema
+} from '@/domain/validations/user.validation';
 
 class UsersRoute {
   public prefix_route = '/users';
@@ -34,6 +37,17 @@ class UsersRoute {
         }
       },
       UsersController.updateUser
+    );
+
+    fastifyWithZod.delete(
+      '/delete',
+      {
+        preHandler: fastify.authenticate,
+        schema: {
+          body: idUserSchema
+        }
+      },
+      UsersController.deleteUser
     );
   }
 }
