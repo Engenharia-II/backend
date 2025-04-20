@@ -110,6 +110,23 @@ export class UserRepository {
       throw new Error('Error listing all users: ' + error);
     }
   }
+
+  async update({ name, email, password, id }: UserInterface) {
+    try {
+      const user = await this.db.user.update({
+        where: { id },
+        data: {
+          name,
+          email,
+          password,
+          updatedAt: new Date()
+        }
+      });
+      return user;
+    } catch (error) {
+      throw new Error('Error updating user: ' + error);
+    }
+  }
 }
 
 export default new UserRepository();
