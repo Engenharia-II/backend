@@ -127,6 +127,16 @@ export class UserRepository {
       throw new Error('Error updating user: ' + error);
     }
   }
+
+  async delete(id: string): Promise<void> {
+    try {
+      await this.db.user.delete({
+        where: { id }
+      });
+    } catch (error) {
+      throw new Error('Error deleting user: ' + error);
+    }
+  }
 }
 
 export default new UserRepository();
