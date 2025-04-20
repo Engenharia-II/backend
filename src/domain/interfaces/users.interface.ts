@@ -5,6 +5,7 @@ export interface UserInterface {
   name: string;
   email: string;
   password: string;
+  confirmPassword?: string;
   googleId?: string | null;
   roleId?: number;
   createdAt?: Date | null;
