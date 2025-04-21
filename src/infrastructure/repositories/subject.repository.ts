@@ -2,7 +2,7 @@ import { DatabaseConnection } from '../database/connection';
 import { PrismaClient } from '@prisma/client';
 import { SubjectInterface } from '@/domain/interfaces/subjects.interface';
 
-export class UserRepository {
+export class SubjectRepository {
   private db: PrismaClient;
 
   constructor() {
@@ -103,3 +103,5 @@ export class UserRepository {
     }
   }
 }
+
+export default new SubjectRepository();
