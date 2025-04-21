@@ -3,10 +3,11 @@ import SessionsRoute from '@/application/routes/sessions.route';
 import { errorHandler } from './infrastructure/webserver/error-handler';
 import AuthPlugin from './infrastructure/plugins/auth.plugin';
 import UsersRoute from '@/application/routes/users.routes';
+import SubjectsRoute from './application/routes/subjects.routes';
 
 export const app = new App({
   plugins: [AuthPlugin],
-  routes: [SessionsRoute, UsersRoute]
+  routes: [SessionsRoute, UsersRoute, SubjectsRoute]
 });
 
 errorHandler(app.app);
