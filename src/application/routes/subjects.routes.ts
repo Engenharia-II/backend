@@ -53,6 +53,17 @@ class SubjectsRoute {
       },
       SubjectController.update
     );
+
+    fastifyWithZod.delete(
+      '/:id',
+      {
+        preHandler: fastify.authenticate,
+        schema: {
+          params: subjectIdSchema
+        }
+      },
+      SubjectController.delete
+    );
   }
 }
 

@@ -3,6 +3,7 @@ import { checkIFUserIsAdmin } from '@/application/services/user/user.service';
 import { SubjectInterface } from '@/domain/interfaces/subjects.interface';
 import {
   createSubject,
+  deleteSubject,
   getSubjectById,
   listSubjects,
   updateSubject
@@ -62,6 +63,23 @@ class SubjectController {
       const subject = await updateSubject({ id, name, description });
       return reply.status(200).send({
         message: 'Matéria atualizada com sucesso',
+        subject
+      });
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async delete(
+    request: FastifyRequest,
+    reply: FastifyReply
+  ): Promise<{ message: string }> {
+    try {
+      const { id } = request.params as { id: string };
+      await checkIFUserIsAdmin(request.user.id);
+      const subject = await deleteSubject(id);
+      return reply.status(200).send({
+        message: 'Matéria deletada com sucesso',
         subject
       });
     } catch (error) {

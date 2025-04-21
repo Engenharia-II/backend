@@ -55,3 +55,13 @@ export const updateSubject = async ({
     throw error;
   }
 };
+
+export const deleteSubject = async (id: string) => {
+  try {
+    await getSubjectById(id);
+    const subject = await subjectRepository.delete(id);
+    return subject;
+  } catch (error) {
+    throw error;
+  }
+};
