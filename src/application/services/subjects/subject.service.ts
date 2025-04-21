@@ -1,5 +1,6 @@
 import { SubjectInterface } from '@/domain/interfaces/subjects.interface';
 import subjectRepository from '@/infrastructure/repositories/subject.repository';
+import { AppError } from '@/infrastructure/webserver/app-error';
 
 export const createSubject = async ({
   name,
@@ -8,6 +9,30 @@ export const createSubject = async ({
   try {
     const subject = await subjectRepository.save({ name, description });
     return subject;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getSubjectById = async (id: string) => {
+  try {
+    const subject = await subjectRepository.getById(id);
+    if (!subject) {
+      throw new AppError('Matéria não encontrada', 404);
+    }
+    return subject;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const listSubjects = async () => {
+  try {
+    const subjects = await subjectRepository.listAll();
+    if (!subjects) {
+      throw new AppError('Nenhuma matéria encontrada', 404);
+    }
+    return subjects;
   } catch (error) {
     throw error;
   }

@@ -1,7 +1,10 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
 import SubjectController from '../controllers/subjects/subjects.controller';
-import { subjectSchema } from '@/domain/validations/subject.validation';
+import {
+  subjectIdSchema,
+  subjectSchema
+} from '@/domain/validations/subject.validation';
 
 class SubjectsRoute {
   public prefix_route = '/subjects';
@@ -18,6 +21,25 @@ class SubjectsRoute {
         }
       },
       SubjectController.create
+    );
+
+    fastifyWithZod.get(
+      '/:id',
+      {
+        preHandler: fastify.authenticate,
+        schema: {
+          params: subjectIdSchema
+        }
+      },
+      SubjectController.getById
+    );
+
+    fastifyWithZod.get(
+      '/',
+      {
+        preHandler: fastify.authenticate
+      },
+      SubjectController.listAllSubjects
     );
   }
 }
