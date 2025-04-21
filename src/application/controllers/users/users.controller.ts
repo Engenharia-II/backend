@@ -58,7 +58,7 @@ class UsersController {
     try {
       const userId = request.user.id;
       await checkIFUserIsAdmin(userId);
-      const { id } = request.body as { id: string };
+      const { id } = request.params as { id: string };
 
       if (userId === id) {
         throw new AppError('Você não pode deletar sua própria conta', 400);

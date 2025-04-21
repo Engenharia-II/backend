@@ -40,11 +40,11 @@ class UsersRoute {
     );
 
     fastifyWithZod.delete(
-      '/delete',
+      '/delete/:id',
       {
         preHandler: fastify.authenticate,
         schema: {
-          body: idUserSchema
+          params: idUserSchema
         }
       },
       UsersController.deleteUser
