@@ -39,7 +39,19 @@ class SubjectsRoute {
       {
         preHandler: fastify.authenticate
       },
-      SubjectController.listAllSubjects
+      SubjectController.list
+    );
+
+    fastifyWithZod.put(
+      '/:id',
+      {
+        preHandler: fastify.authenticate,
+        schema: {
+          params: subjectIdSchema,
+          body: subjectSchema
+        }
+      },
+      SubjectController.update
     );
   }
 }

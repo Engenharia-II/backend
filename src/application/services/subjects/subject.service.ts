@@ -37,3 +37,21 @@ export const listSubjects = async () => {
     throw error;
   }
 };
+
+export const updateSubject = async ({
+  id,
+  name,
+  description
+}: SubjectInterface) => {
+  try {
+    await getSubjectById(id as string);
+    const subject = await subjectRepository.update({
+      id,
+      name,
+      description
+    });
+    return subject;
+  } catch (error) {
+    throw error;
+  }
+};
