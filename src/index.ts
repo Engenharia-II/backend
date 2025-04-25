@@ -5,10 +5,11 @@ import AuthPlugin from './infrastructure/plugins/auth.plugin';
 import UsersRoute from '@/application/routes/users.routes';
 import SubjectsRoute from './application/routes/subjects.routes';
 import TopicsRoute from './application/routes/topics.routes';
+import ContentsRoute from './application/routes/contents.route';
 
 export const app = new App({
   plugins: [AuthPlugin],
-  routes: [SessionsRoute, UsersRoute, SubjectsRoute, TopicsRoute]
+  routes: [SessionsRoute, UsersRoute, SubjectsRoute, TopicsRoute, ContentsRoute]
 });
 
 errorHandler(app.app);

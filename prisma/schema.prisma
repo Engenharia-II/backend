@@ -24,7 +24,6 @@ model User {
   updatedAt     DateTime  @default(now()) @map("updated_at")
   lastAppAccess DateTime? @map("last_app_access")
 
-  Session       Session[]
   role          Role            @relation(fields: [roleId], references: [id])
   SubjectAccess SubjectAccess[]
   ContentAccess ContentAccess[]
@@ -39,19 +38,6 @@ model Role {
   User User[]
 
   @@map("roles")
-}
-
-model Session {
-  id        String   @id @default(uuid())
-  userId    String   @map("user_id")
-  token     String
-  createdAt DateTime @default(now()) @map("created_at")
-  expiresAt DateTime @map("expires_at")
-  provider  String   @default("local")
-
-  user User @relation(fields: [userId], references: [id])
-
-  @@map("sessions")
 }
 
 model Subject {
@@ -90,6 +76,9 @@ model Content {
   url             String
   type            String
   publicationDate DateTime @map("publication_date")
+  duration        Int
+  tumbnailUrl     String?  @map("thumbnail_url")
+  isFree          Boolean  @default(false) @map("is_free")
   createdAt       DateTime @default(now()) @map("created_at")
   updatedAt       DateTime @default(now()) @map("updated_at")
 
