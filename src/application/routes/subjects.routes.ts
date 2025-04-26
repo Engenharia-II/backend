@@ -64,6 +64,16 @@ class SubjectsRoute {
       },
       SubjectController.delete
     );
+
+    fastify.get(
+      '/:id/topics',
+      {
+        schema: {
+          params: subjectIdSchema
+        }
+      },
+      SubjectController.listTopicsBySubjectId
+    );
   }
 }
 

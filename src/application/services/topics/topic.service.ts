@@ -81,3 +81,15 @@ export const deleteTopic = async (id: string) => {
     throw error;
   }
 };
+
+export const listTopicsBySubject = async (
+  subjectId: string
+): Promise<TopicInterface[]> => {
+  try {
+    await getSubjectById(subjectId);
+    const topics = await topicRepository.listBySubjectId(subjectId);
+    return topics;
+  } catch (error) {
+    throw error;
+  }
+};

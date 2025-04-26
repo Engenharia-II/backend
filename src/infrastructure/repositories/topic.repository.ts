@@ -117,6 +117,29 @@ export class TopicRepository {
       throw new Error('Error deleting topic: ' + error);
     }
   }
+
+  async listBySubjectId(subjectId: string): Promise<TopicInterface[]> {
+    try {
+      const topics = await this.db.topic.findMany({
+        where: { subjectId },
+        select: {
+          id: true,
+          name: true,
+          description: true,
+          position: true,
+          subjectId: true,
+          createdAt: true,
+          updatedAt: true
+        },
+        orderBy: {
+          position: 'asc'
+        }
+      });
+      return topics;
+    } catch (error) {
+      throw new Error('Error listing topics by subject: ' + error);
+    }
+  }
 }
 
 export default new TopicRepository();
