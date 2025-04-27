@@ -64,6 +64,17 @@ class TopicsRoute {
       },
       TopicController.delete
     );
+
+    fastifyWithZod.get(
+      '/:id/contents',
+      {
+        preHandler: fastify.authenticate,
+        schema: {
+          params: topicIdSchema
+        }
+      },
+      TopicController.listContentsByTopic
+    );
   }
 }
 

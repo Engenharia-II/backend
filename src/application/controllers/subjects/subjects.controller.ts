@@ -8,6 +8,8 @@ import {
   listSubjects,
   updateSubject
 } from '@/application/services/subjects/subject.service';
+import { TopicInterface } from '@/domain/interfaces/topics.interface';
+import { listTopicsBySubject } from '@/application/services/topics/topic.service';
 
 class SubjectController {
   static async create(
@@ -82,6 +84,19 @@ class SubjectController {
         message: 'Matéria deletada com sucesso',
         subject
       });
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async listTopicsBySubjectId(
+    request: FastifyRequest,
+    reply: FastifyReply
+  ): Promise<TopicInterface[]> {
+    try {
+      const { id: subjectId } = request.params as { id: string };
+      const topics = await listTopicsBySubject(subjectId);
+      return reply.status(200).send(topics);
     } catch (error) {
       throw error;
     }

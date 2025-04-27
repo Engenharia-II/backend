@@ -13,11 +13,13 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "rules": {
     /* Regras de TypeScript */
     "@typescript-eslint/no-unused-vars": [
-      "warn",
+      "error",
       {
         "argsIgnorePattern": "^_"
       }
@@ -29,7 +31,10 @@
     "no-console": "warn", // Avisar sobre console.log em produção
     "no-debugger": "error", // Evitar debugger
     "no-unused-vars": "off", // Desativar em favor do @typescript-eslint
-    "eqeqeq": ["error", "always"], // Exigir comparações estritas
+    "eqeqeq": [
+      "error",
+      "always"
+    ], // Exigir comparações estritas
     "prefer-const": "warn", // Sugerir uso de const quando aplicável
     "no-var": "error" // Proibir var
   }

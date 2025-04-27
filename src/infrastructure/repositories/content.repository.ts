@@ -176,6 +176,34 @@ export class ContentRepository {
       throw new Error('Error deleting content: ' + error);
     }
   }
+
+  async listByTopicId(topicId: string): Promise<ContentInterface[]> {
+    try {
+      const contents = await this.db.content.findMany({
+        where: { topicId },
+        select: {
+          id: true,
+          name: true,
+          description: true,
+          topicId: true,
+          duration: true,
+          isFree: true,
+          publicationDate: true,
+          type: true,
+          url: true,
+          tumbnailUrl: true,
+          createdAt: true,
+          updatedAt: true
+        }
+      });
+      return contents.map((content) => ({
+        ...content,
+        type: content.type as ContentType
+      }));
+    } catch (error) {
+      throw new Error('Error listing contents by topicId: ' + error);
+    }
+  }
 }
 
 export default new ContentRepository();
