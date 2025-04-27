@@ -1,4 +1,4 @@
-import fastify, { FastifyInstance, FastifyPluginOptions } from 'fastify';
+import { FastifyInstance, FastifyPluginOptions } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
 import {
   topicIdSchema,
