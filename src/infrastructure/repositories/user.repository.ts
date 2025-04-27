@@ -172,6 +172,55 @@ export class UserRepository {
       throw new Error('Error listing last subjects access: ' + error);
     }
   }
+
+  async updateLastContentAccess(
+    userId: string,
+    contentId: string
+  ): Promise<void> {
+    try {
+      await this.db.contentAccess.upsert({
+        where: { userId_contentId: { userId, contentId } },
+        update: { lastAccess: new Date() },
+        create: {
+          userId,
+          contentId,
+          lastAccess: new Date()
+        }
+      });
+    } catch (error) {
+      throw new Error('Error updating last content access: ' + error);
+    }
+  }
+
+  async updateLastSubjectAccess(
+    userId: string,
+    subjectId: string
+  ): Promise<void> {
+    try {
+      await this.db.subjectAccess.upsert({
+        where: { userId_subjectId: { userId, subjectId } },
+        update: { lastAccess: new Date() },
+        create: {
+          userId,
+          subjectId,
+          lastAccess: new Date()
+        }
+      });
+    } catch (error) {
+      throw new Error('Error updating last subject access: ' + error);
+    }
+  }
+
+  async updateLastAppAccess(userId: string): Promise<void> {
+    try {
+      await this.db.user.update({
+        where: { id: userId },
+        data: { lastAppAccess: new Date() }
+      });
+    } catch (error) {
+      throw new Error('Error updating last app access: ' + error);
+    }
+  }
 }
 
 export default new UserRepository();

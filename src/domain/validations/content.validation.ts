@@ -17,3 +17,7 @@ export const contentSchema = z.object({
 export const contentIdSchema = z.object({
   id: z.string().uuid('ID inválido').min(1, 'ID é obrigatório')
 });
+
+export const idContentSchema = z.object({
+  contentId: z.string().uuid('ID inválido').min(1, 'ID é obrigatório')
+});

@@ -115,3 +115,36 @@ export const listLastSubjectsAccessByUserId = async (userId: string) => {
     throw error;
   }
 };
+
+export const updateLastContentAccess = async (
+  userId: string,
+  contentId: string
+) => {
+  try {
+    await getUserById(userId);
+    await userRepository.updateLastContentAccess(userId, contentId);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updateLastSubjectAccess = async (
+  userId: string,
+  subjectId: string
+) => {
+  try {
+    await getUserById(userId);
+    await userRepository.updateLastSubjectAccess(userId, subjectId);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updateLastAppAccess = async (userId: string) => {
+  try {
+    await getUserById(userId);
+    await userRepository.updateLastAppAccess(userId);
+  } catch (error) {
+    throw error;
+  }
+};

@@ -6,10 +6,15 @@ import {
   listAllUsers,
   listLastContentsAccessByUserId,
   listLastSubjectsAccessByUserId,
+  updateLastAppAccess,
+  updateLastContentAccess,
+  updateLastSubjectAccess,
   updateUser
 } from '../../services/user/user.service';
 import { AppError } from '@/infrastructure/webserver/app-error';
 import { UserInterface } from '@/domain/interfaces/users.interface';
+import { getContentById } from '@/application/services/contents/content.service';
+import { getSubjectById } from '@/application/services/subjects/subject.service';
 
 class UsersController {
   static async getUserById(request: FastifyRequest, reply: FastifyReply) {
@@ -96,6 +101,58 @@ class UsersController {
       const { id: userId } = request.params as { id: string };
       const subjects = await listLastSubjectsAccessByUserId(userId);
       return reply.status(200).send(subjects);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async updateLastContentAccess(
+    request: FastifyRequest,
+    reply: FastifyReply
+  ) {
+    try {
+      const { id: userId } = request.user;
+      const { contentId } = request.body as { contentId: string };
+      await getUserById(userId);
+      await getContentById(contentId);
+      await updateLastContentAccess(userId, contentId);
+      return reply
+        .status(200)
+        .send({ message: 'Último acesso atualizado com sucesso' });
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async updateLastSubjectAccess(
+    request: FastifyRequest,
+    reply: FastifyReply
+  ) {
+    try {
+      const { id: userId } = request.user;
+      const { subjectId } = request.body as { subjectId: string };
+      await getUserById(userId);
+      await getSubjectById(subjectId);
+      await updateLastSubjectAccess(userId, subjectId);
+      return reply
+        .status(200)
+        .send({ message: 'Último acesso atualizado com sucesso' });
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async updateLastAppAccess(
+    request: FastifyRequest,
+    reply: FastifyReply
+  ) {
+    try {
+      const { id: userId } = request.user;
+      await getUserById(userId);
+      await updateLastAppAccess(userId);
+      return reply
+        .status(200)
+        .send({ message: 'Último acesso atualizado com sucesso' });
     } catch (error) {
       throw error;
     }
