@@ -5,6 +5,7 @@ import {
   getUserById,
   listAllUsers,
   listLastContentsAccessByUserId,
+  listLastSubjectsAccessByUserId,
   updateUser
 } from '../../services/user/user.service';
 import { AppError } from '@/infrastructure/webserver/app-error';
@@ -82,6 +83,19 @@ class UsersController {
       const { id: userId } = request.params as { id: string };
       const contents = await listLastContentsAccessByUserId(userId);
       return reply.status(200).send(contents);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async listLastUserSubjectAccess(
+    request: FastifyRequest,
+    reply: FastifyReply
+  ) {
+    try {
+      const { id: userId } = request.params as { id: string };
+      const subjects = await listLastSubjectsAccessByUserId(userId);
+      return reply.status(200).send(subjects);
     } catch (error) {
       throw error;
     }

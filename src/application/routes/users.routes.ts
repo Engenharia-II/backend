@@ -60,6 +60,17 @@ class UsersRoute {
       },
       UsersController.listLastUserContentAccess
     );
+
+    fastifyWithZod.get(
+      '/last-subjects-access/:id',
+      {
+        preHandler: fastify.authenticate,
+        schema: {
+          params: idUserSchema
+        }
+      },
+      UsersController.listLastUserSubjectAccess
+    );
   }
 }
 

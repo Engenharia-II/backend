@@ -92,15 +92,25 @@ export const deleteUser = async (id: string) => {
 
 export const listLastContentsAccessByUserId = async (userId: string) => {
   try {
-    const user = await getUserById(userId);
-    if (!user) {
-      throw new AppError('Usuário não encontrado', 404);
-    }
+    await getUserById(userId);
     const contentsAccess = await userRepository.listLastContentsAccess(userId);
     if (!contentsAccess) {
       throw new AppError('Nenhum conteúdo encontrado', 404);
     }
     return contentsAccess;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const listLastSubjectsAccessByUserId = async (userId: string) => {
+  try {
+    await getUserById(userId);
+    const subjectsAccess = await userRepository.listLastSubjectsAccess(userId);
+    if (!subjectsAccess) {
+      throw new AppError('Nenhum assunto encontrado', 404);
+    }
+    return subjectsAccess;
   } catch (error) {
     throw error;
   }

@@ -1,6 +1,7 @@
 import { UserInterface } from '@/domain/interfaces/users.interface';
 import { DatabaseConnection } from '../database/connection';
 import { ContentAccess, PrismaClient } from '@prisma/client';
+import { SubjectAccess } from '@/domain/interfaces/subject-access.interface';
 
 export class UserRepository {
   private db: PrismaClient;
@@ -152,6 +153,23 @@ export class UserRepository {
       return contentsAccess;
     } catch (error) {
       throw new Error('Error listing last contents access: ' + error);
+    }
+  }
+
+  async listLastSubjectsAccess(userId: string): Promise<SubjectAccess[]> {
+    try {
+      const subjectsAccess = await this.db.subjectAccess.findMany({
+        where: { userId },
+        orderBy: { lastAccess: 'desc' },
+        select: {
+          userId: true,
+          subjectId: true,
+          lastAccess: true
+        }
+      });
+      return subjectsAccess;
+    } catch (error) {
+      throw new Error('Error listing last subjects access: ' + error);
     }
   }
 }
