@@ -103,3 +103,16 @@ export const deleteContent = async (id: string) => {
     throw error;
   }
 };
+
+export const listByTopicId = async (topicId: string) => {
+  try {
+    await getTopicById(topicId);
+    const contents = await contentRepository.listByTopicId(topicId);
+    if (!contents) {
+      throw new AppError('Nenhum conteúdo encontrado', 404);
+    }
+    return contents;
+  } catch (error) {
+    throw error;
+  }
+};

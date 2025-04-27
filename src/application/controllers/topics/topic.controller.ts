@@ -1,3 +1,4 @@
+import { listByTopicId } from '@/application/services/contents/content.service';
 import {
   createTopic,
   deleteTopic,
@@ -6,6 +7,7 @@ import {
   updateTopic
 } from '@/application/services/topics/topic.service';
 import { checkIFUserIsAdmin } from '@/application/services/user/user.service';
+import { ContentInterface } from '@/domain/interfaces/contents.interface';
 import { TopicInterface } from '@/domain/interfaces/topics.interface';
 import { FastifyReply, FastifyRequest } from 'fastify';
 
@@ -94,6 +96,19 @@ class TopicController {
       return reply.status(200).send({
         message: 'Tópico deletado com sucesso'
       });
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async listContentsByTopic(
+    request: FastifyRequest,
+    reply: FastifyReply
+  ): Promise<ContentInterface[]> {
+    try {
+      const { id: topicId } = request.params as { id: string };
+      const contents = await listByTopicId(topicId);
+      return reply.status(200).send(contents);
     } catch (error) {
       throw error;
     }

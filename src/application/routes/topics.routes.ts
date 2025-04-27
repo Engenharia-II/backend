@@ -1,4 +1,4 @@
-import { FastifyInstance, FastifyPluginOptions } from 'fastify';
+import fastify, { FastifyInstance, FastifyPluginOptions } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
 import {
   topicIdSchema,
@@ -63,6 +63,17 @@ class TopicsRoute {
         }
       },
       TopicController.delete
+    );
+
+    fastifyWithZod.get(
+      '/:id/contents',
+      {
+        preHandler: fastify.authenticate,
+        schema: {
+          params: topicIdSchema
+        }
+      },
+      TopicController.listContentsByTopic
     );
   }
 }
