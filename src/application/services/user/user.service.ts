@@ -89,3 +89,19 @@ export const deleteUser = async (id: string) => {
     throw error;
   }
 };
+
+export const listLastContentsAccessByUserId = async (userId: string) => {
+  try {
+    const user = await getUserById(userId);
+    if (!user) {
+      throw new AppError('Usuário não encontrado', 404);
+    }
+    const contentsAccess = await userRepository.listLastContentsAccess(userId);
+    if (!contentsAccess) {
+      throw new AppError('Nenhum conteúdo encontrado', 404);
+    }
+    return contentsAccess;
+  } catch (error) {
+    throw error;
+  }
+};

@@ -49,6 +49,17 @@ class UsersRoute {
       },
       UsersController.deleteUser
     );
+
+    fastifyWithZod.get(
+      '/last-contents-access/:id',
+      {
+        preHandler: fastify.authenticate,
+        schema: {
+          params: idUserSchema
+        }
+      },
+      UsersController.listLastUserContentAccess
+    );
   }
 }
 

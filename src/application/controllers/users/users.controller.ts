@@ -4,6 +4,7 @@ import {
   deleteUser,
   getUserById,
   listAllUsers,
+  listLastContentsAccessByUserId,
   updateUser
 } from '../../services/user/user.service';
 import { AppError } from '@/infrastructure/webserver/app-error';
@@ -68,6 +69,19 @@ class UsersController {
       return reply
         .status(200)
         .send({ message: 'Usuário deletado com sucesso', data: deletedUser });
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async listLastUserContentAccess(
+    request: FastifyRequest,
+    reply: FastifyReply
+  ) {
+    try {
+      const { id: userId } = request.params as { id: string };
+      const contents = await listLastContentsAccessByUserId(userId);
+      return reply.status(200).send(contents);
     } catch (error) {
       throw error;
     }

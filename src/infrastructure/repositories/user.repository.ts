@@ -1,6 +1,6 @@
 import { UserInterface } from '@/domain/interfaces/users.interface';
 import { DatabaseConnection } from '../database/connection';
-import { PrismaClient } from '@prisma/client';
+import { ContentAccess, PrismaClient } from '@prisma/client';
 
 export class UserRepository {
   private db: PrismaClient;
@@ -135,6 +135,23 @@ export class UserRepository {
       });
     } catch (error) {
       throw new Error('Error deleting user: ' + error);
+    }
+  }
+
+  async listLastContentsAccess(userId: string): Promise<ContentAccess[]> {
+    try {
+      const contentsAccess = await this.db.contentAccess.findMany({
+        where: { userId },
+        orderBy: { lastAccess: 'desc' },
+        select: {
+          userId: true,
+          contentId: true,
+          lastAccess: true
+        }
+      });
+      return contentsAccess;
+    } catch (error) {
+      throw new Error('Error listing last contents access: ' + error);
     }
   }
 }
