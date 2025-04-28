@@ -12,3 +12,11 @@ export const subjectIdSchema = z.object({
 export const idSubjectSchema = z.object({
   subjectId: z.string().uuid('ID inválido').min(1, 'ID é obrigatório')
 });
+
+export const subjectStudySchema = z.object({
+  subjectId: z
+    .string()
+    .uuid('ID inválido')
+    .min(1, 'ID do assunto é obrigatório'),
+  finishedAt: z.date().optional()
+});
