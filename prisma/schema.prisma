@@ -27,6 +27,8 @@ model User {
   role          Role            @relation(fields: [roleId], references: [id])
   SubjectAccess SubjectAccess[]
   ContentAccess ContentAccess[]
+  SubjectStudy  SubjectStudy[]
+  TopicStudy    TopicStudy[]
 
   @@map("users")
 }
@@ -49,6 +51,7 @@ model Subject {
 
   topics        Topic[]
   SubjectAccess SubjectAccess[]
+  SubjectStudy  SubjectStudy[]
 
   @@map("subjects")
 }
@@ -62,8 +65,9 @@ model Topic {
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @default(now()) @map("updated_at")
 
-  subject Subject   @relation(fields: [subjectId], references: [id], onDelete: Cascade)
-  Content Content[]
+  subject    Subject      @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  Content    Content[]
+  TopicStudy TopicStudy[]
 
   @@map("topics")
 }
@@ -110,4 +114,34 @@ model ContentAccess {
 
   @@id([userId, contentId])
   @@map("content_access")
+}
+
+model SubjectStudy {
+  userId     String    @map("user_id")
+  subjectId  String    @map("subject_id")
+  status     String // "in_progress", "completed"
+  startedAt  DateTime  @default(now()) @map("started_at")
+  updatedAt  DateTime  @default(now()) @map("updated_at")
+  finishedAt DateTime? @map("finished_at")
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  subject Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@id([userId, subjectId])
+  @@map("subject_study")
+}
+
+model TopicStudy {
+  userId     String    @map("user_id")
+  topicId    String    @map("topic_id")
+  status     String // "completed"
+  startedAt  DateTime  @default(now()) @map("started_at")
+  updatedAt  DateTime  @default(now()) @map("updated_at")
+  finishedAt DateTime? @map("finished_at")
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  topic Topic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@id([userId, topicId])
+  @@map("topic_study")
 }
