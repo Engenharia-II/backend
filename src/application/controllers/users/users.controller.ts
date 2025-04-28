@@ -4,14 +4,11 @@ import {
   deleteUser,
   getUserById,
   listAllUsers,
-  listLastContentsAccessByUserId,
   updateLastAppAccess,
-  updateLastContentAccess,
   updateUser
 } from '../../services/user/user.service';
 import { AppError } from '@/infrastructure/webserver/app-error';
 import { UserInterface } from '@/domain/interfaces/users.interface';
-import { getContentById } from '@/application/services/contents/content.service';
 
 class UsersController {
   static async getUserById(request: FastifyRequest, reply: FastifyReply) {
@@ -72,37 +69,6 @@ class UsersController {
       return reply
         .status(200)
         .send({ message: 'Usuário deletado com sucesso', data: deletedUser });
-    } catch (error) {
-      throw error;
-    }
-  }
-
-  static async listLastUserContentAccess(
-    request: FastifyRequest,
-    reply: FastifyReply
-  ) {
-    try {
-      const { id: userId } = request.params as { id: string };
-      const contents = await listLastContentsAccessByUserId(userId);
-      return reply.status(200).send(contents);
-    } catch (error) {
-      throw error;
-    }
-  }
-
-  static async updateLastContentAccess(
-    request: FastifyRequest,
-    reply: FastifyReply
-  ) {
-    try {
-      const { id: userId } = request.user;
-      const { contentId } = request.body as { contentId: string };
-      await getUserById(userId);
-      await getContentById(contentId);
-      await updateLastContentAccess(userId, contentId);
-      return reply
-        .status(200)
-        .send({ message: 'Último acesso atualizado com sucesso' });
     } catch (error) {
       throw error;
     }

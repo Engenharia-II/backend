@@ -90,31 +90,6 @@ export const deleteUser = async (id: string) => {
   }
 };
 
-export const listLastContentsAccessByUserId = async (userId: string) => {
-  try {
-    await getUserById(userId);
-    const contentsAccess = await userRepository.listLastContentsAccess(userId);
-    if (!contentsAccess) {
-      throw new AppError('Nenhum conteúdo encontrado', 404);
-    }
-    return contentsAccess;
-  } catch (error) {
-    throw error;
-  }
-};
-
-export const updateLastContentAccess = async (
-  userId: string,
-  contentId: string
-) => {
-  try {
-    await getUserById(userId);
-    await userRepository.updateLastContentAccess(userId, contentId);
-  } catch (error) {
-    throw error;
-  }
-};
-
 export const updateLastAppAccess = async (userId: string) => {
   try {
     await getUserById(userId);
