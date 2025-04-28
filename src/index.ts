@@ -9,6 +9,7 @@ import ContentsRoute from './application/routes/contents.routes';
 import TopicStudyRoute from './application/routes/topic-study.routes';
 import SubjectStudyRoute from './application/routes/subject-study.routes';
 import SubjectAccessRoute from './application/routes/subject-access.routes';
+import TopicAccessRoute from './application/routes/topic-access.routes';
 
 export const app = new App({
   plugins: [AuthPlugin],
@@ -20,7 +21,8 @@ export const app = new App({
     ContentsRoute,
     TopicStudyRoute,
     SubjectStudyRoute,
-    SubjectAccessRoute
+    SubjectAccessRoute,
+    TopicAccessRoute
   ]
 });
 
