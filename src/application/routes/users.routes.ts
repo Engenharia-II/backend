@@ -6,7 +6,6 @@ import {
   updateUserSchema
 } from '@/domain/validations/user.validation';
 import { idContentSchema } from '@/domain/validations/content.validation';
-import { idSubjectSchema } from '@/domain/validations/subject.validation';
 
 class UsersRoute {
   public prefix_route = '/users';
@@ -63,17 +62,6 @@ class UsersRoute {
       UsersController.listLastUserContentAccess
     );
 
-    fastifyWithZod.get(
-      '/last-subjects-access/:id',
-      {
-        preHandler: fastify.authenticate,
-        schema: {
-          params: idUserSchema
-        }
-      },
-      UsersController.listLastUserSubjectAccess
-    );
-
     fastifyWithZod.put(
       '/last-content-access/:id',
       {
@@ -83,17 +71,6 @@ class UsersRoute {
         }
       },
       UsersController.updateLastContentAccess
-    );
-
-    fastifyWithZod.put(
-      '/last-subject-access/:id',
-      {
-        preHandler: fastify.authenticate,
-        schema: {
-          body: idSubjectSchema
-        }
-      },
-      UsersController.updateLastSubjectAccess
     );
 
     fastifyWithZod.put(

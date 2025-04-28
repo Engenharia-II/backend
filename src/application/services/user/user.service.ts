@@ -103,19 +103,6 @@ export const listLastContentsAccessByUserId = async (userId: string) => {
   }
 };
 
-export const listLastSubjectsAccessByUserId = async (userId: string) => {
-  try {
-    await getUserById(userId);
-    const subjectsAccess = await userRepository.listLastSubjectsAccess(userId);
-    if (!subjectsAccess) {
-      throw new AppError('Nenhum assunto encontrado', 404);
-    }
-    return subjectsAccess;
-  } catch (error) {
-    throw error;
-  }
-};
-
 export const updateLastContentAccess = async (
   userId: string,
   contentId: string
@@ -123,18 +110,6 @@ export const updateLastContentAccess = async (
   try {
     await getUserById(userId);
     await userRepository.updateLastContentAccess(userId, contentId);
-  } catch (error) {
-    throw error;
-  }
-};
-
-export const updateLastSubjectAccess = async (
-  userId: string,
-  subjectId: string
-) => {
-  try {
-    await getUserById(userId);
-    await userRepository.updateLastSubjectAccess(userId, subjectId);
   } catch (error) {
     throw error;
   }

@@ -1,7 +1,6 @@
 import { UserInterface } from '@/domain/interfaces/users.interface';
 import { DatabaseConnection } from '../database/connection';
 import { ContentAccess, PrismaClient } from '@prisma/client';
-import { SubjectAccess } from '@/domain/interfaces/subject-access.interface';
 
 export class UserRepository {
   private db: PrismaClient;
@@ -156,23 +155,6 @@ export class UserRepository {
     }
   }
 
-  async listLastSubjectsAccess(userId: string): Promise<SubjectAccess[]> {
-    try {
-      const subjectsAccess = await this.db.subjectAccess.findMany({
-        where: { userId },
-        orderBy: { lastAccess: 'desc' },
-        select: {
-          userId: true,
-          subjectId: true,
-          lastAccess: true
-        }
-      });
-      return subjectsAccess;
-    } catch (error) {
-      throw new Error('Error listing last subjects access: ' + error);
-    }
-  }
-
   async updateLastContentAccess(
     userId: string,
     contentId: string
@@ -189,25 +171,6 @@ export class UserRepository {
       });
     } catch (error) {
       throw new Error('Error updating last content access: ' + error);
-    }
-  }
-
-  async updateLastSubjectAccess(
-    userId: string,
-    subjectId: string
-  ): Promise<void> {
-    try {
-      await this.db.subjectAccess.upsert({
-        where: { userId_subjectId: { userId, subjectId } },
-        update: { lastAccess: new Date() },
-        create: {
-          userId,
-          subjectId,
-          lastAccess: new Date()
-        }
-      });
-    } catch (error) {
-      throw new Error('Error updating last subject access: ' + error);
     }
   }
 
