@@ -1,4 +1,4 @@
-export interface SubjectAccess {
+export interface SubjectAccessInterface {
   userId: string;
   subjectId: string;
   lastAccess: Date;

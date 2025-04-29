@@ -1,6 +1,6 @@
 import { DatabaseConnection } from '../database/connection';
 import { PrismaClient } from '@prisma/client';
-import { SubjectAccess } from '@/domain/interfaces/subject-access.interface';
+import { SubjectAccessInterface } from '@/domain/interfaces/subject-access.interface';
 
 export class SubjectAccessRepository {
   private db: PrismaClient;
@@ -9,7 +9,9 @@ export class SubjectAccessRepository {
     this.db = DatabaseConnection.getInstance().getClient();
   }
 
-  async listLastSubjectsAccess(userId: string): Promise<SubjectAccess[]> {
+  async listLastSubjectsAccess(
+    userId: string
+  ): Promise<SubjectAccessInterface[]> {
     try {
       const subjectsAccess = await this.db.subjectAccess.findMany({
         where: { userId },
