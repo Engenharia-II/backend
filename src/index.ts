@@ -10,6 +10,7 @@ import TopicStudyRoute from './application/routes/topic-study.routes';
 import SubjectStudyRoute from './application/routes/subject-study.routes';
 import SubjectAccessRoute from './application/routes/subject-access.routes';
 import TopicAccessRoute from './application/routes/topic-access.routes';
+import SavedContentRoute from './application/routes/saved-content.routes';
 
 export const app = new App({
   plugins: [AuthPlugin],
@@ -22,7 +23,8 @@ export const app = new App({
     TopicStudyRoute,
     SubjectStudyRoute,
     SubjectAccessRoute,
-    TopicAccessRoute
+    TopicAccessRoute,
+    SavedContentRoute
   ]
 });
 
