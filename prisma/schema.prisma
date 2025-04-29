@@ -29,6 +29,7 @@ model User {
   SubjectStudy  SubjectStudy[]
   TopicStudy    TopicStudy[]
   TopicAccess   TopicAccess[]
+  SavedContent  SavedContent[]
 
   @@map("users")
 }
@@ -87,7 +88,8 @@ model Content {
   createdAt       DateTime @default(now()) @map("created_at")
   updatedAt       DateTime @default(now()) @map("updated_at")
 
-  topic Topic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  topic        Topic          @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  SavedContent SavedContent[]
 
   @@map("contents")
 }
@@ -144,4 +146,16 @@ model TopicStudy {
 
   @@id([userId, topicId])
   @@map("topic_study")
+}
+
+model SavedContent {
+  userId    String   @map("user_id")
+  contentId String   @map("content_id")
+  savedAt   DateTime @default(now()) @map("saved_at")
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  content Content @relation(fields: [contentId], references: [id], onDelete: Cascade)
+
+  @@id([userId, contentId])
+  @@map("saved_content")
 }
