@@ -4,7 +4,7 @@ import {
 } from '@/application/services/topic-access/topic-access.service';
 import { FastifyReply, FastifyRequest } from 'fastify';
 
-class TopicAccess {
+class TopicAccessController {
   static async listLastUserTopicAccess(
     request: FastifyRequest,
     reply: FastifyReply
@@ -35,4 +35,4 @@ class TopicAccess {
   }
 }
 
-export default TopicAccess;
+export default TopicAccessController;

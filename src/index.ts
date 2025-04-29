@@ -1,6 +1,6 @@
-import App from '@/infrastructure/webserver/server';
-import SessionsRoute from '@/application/routes/sessions.route';
 import { errorHandler } from './infrastructure/webserver/error-handler';
+import App from '@/infrastructure/webserver/server';
+import SessionsRoute from '@/application/routes/sessions.routes';
 import AuthPlugin from './infrastructure/plugins/auth.plugin';
 import UsersRoute from '@/application/routes/users.routes';
 import SubjectsRoute from './application/routes/subjects.routes';
@@ -10,6 +10,7 @@ import TopicStudyRoute from './application/routes/topic-study.routes';
 import SubjectStudyRoute from './application/routes/subject-study.routes';
 import SubjectAccessRoute from './application/routes/subject-access.routes';
 import TopicAccessRoute from './application/routes/topic-access.routes';
+import SavedContentRoute from './application/routes/saved-content.routes';
 
 export const app = new App({
   plugins: [AuthPlugin],
@@ -22,7 +23,8 @@ export const app = new App({
     TopicStudyRoute,
     SubjectStudyRoute,
     SubjectAccessRoute,
-    TopicAccessRoute
+    TopicAccessRoute,
+    SavedContentRoute
   ]
 });
 

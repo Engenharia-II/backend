@@ -4,7 +4,7 @@ import {
 } from '@/application/services/subject-access/subject-access.service';
 import { FastifyReply, FastifyRequest } from 'fastify';
 
-class SubjectAccess {
+class SubjectAccessController {
   static async listLastUserSubjectAccess(
     request: FastifyRequest,
     reply: FastifyReply
@@ -35,4 +35,4 @@ class SubjectAccess {
   }
 }
 
-export default SubjectAccess;
+export default SubjectAccessController;
