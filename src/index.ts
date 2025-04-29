@@ -1,6 +1,6 @@
-import App from '@/infrastructure/webserver/server';
-import SessionsRoute from '@/application/routes/sessions.route';
 import { errorHandler } from './infrastructure/webserver/error-handler';
+import App from '@/infrastructure/webserver/server';
+import SessionsRoute from '@/application/routes/sessions.routes';
 import AuthPlugin from './infrastructure/plugins/auth.plugin';
 import UsersRoute from '@/application/routes/users.routes';
 import SubjectsRoute from './application/routes/subjects.routes';

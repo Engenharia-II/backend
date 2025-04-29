@@ -2,7 +2,7 @@ import { FastifyInstance, FastifyPluginOptions } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
 import { idUserSchema } from '@/domain/validations/user.validation';
 import { idSubjectSchema } from '@/domain/validations/subject.validation';
-import SubjectAccess from '../controllers/subject-access/subject-access.controller';
+import SubjectAccessController from '../controllers/subject-access/subject-access.controller';
 
 class SubjectAccessRoute {
   public prefix_route = '/subject-access';
@@ -18,7 +18,7 @@ class SubjectAccessRoute {
           params: idUserSchema
         }
       },
-      SubjectAccess.listLastUserSubjectAccess
+      SubjectAccessController.listLastUserSubjectAccess
     );
 
     fastifyWithZod.put(
@@ -29,7 +29,7 @@ class SubjectAccessRoute {
           body: idSubjectSchema
         }
       },
-      SubjectAccess.updateLastSubjectAccess
+      SubjectAccessController.updateLastSubjectAccess
     );
   }
 }

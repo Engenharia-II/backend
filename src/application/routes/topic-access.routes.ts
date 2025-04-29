@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
 import { idUserSchema } from '@/domain/validations/user.validation';
-import TopicAccess from '../controllers/topic-access/topic-access.controller';
+import TopicAccessController from '../controllers/topic-access/topic-access.controller';
 import { idTopicSchema } from '@/domain/validations/topic.validation';
 
 class TopicAccessRoute {
@@ -18,7 +18,7 @@ class TopicAccessRoute {
           params: idUserSchema
         }
       },
-      TopicAccess.listLastUserTopicAccess
+      TopicAccessController.listLastUserTopicAccess
     );
 
     fastifyWithZod.put(
@@ -29,7 +29,7 @@ class TopicAccessRoute {
           body: idTopicSchema
         }
       },
-      TopicAccess.updateLastTopicAccess
+      TopicAccessController.updateLastTopicAccess
     );
   }
 }
