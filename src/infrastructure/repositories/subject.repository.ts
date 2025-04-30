@@ -1,13 +1,10 @@
 import { DatabaseConnection } from '../database/connection';
 import { PrismaClient } from '@prisma/client';
-import { SubjectInterface } from '@/domain/interfaces/subjects.interface';
-
-export type RawSubjectProgressRow = {
-  subject_id: string;
-  name: string;
-  total_topics: bigint;
-  completed_topics: bigint;
-};
+import {
+  RawSubjectProgressRow,
+  RawSubjectWithStatsRow,
+  SubjectInterface
+} from '@/domain/interfaces/subjects.interface';
 
 export class SubjectRepository {
   private db: PrismaClient;
@@ -46,10 +43,89 @@ export class SubjectRepository {
           name: true,
           description: true,
           createdAt: true,
-          updatedAt: true
+          updatedAt: true,
+          topics: {
+            select: {
+              id: true,
+              name: true,
+              description: true,
+              position: true,
+              createdAt: true,
+              updatedAt: true
+            }
+          }
         }
       });
       return subject;
+    } catch (error) {
+      throw new Error('Error finding subject by id: ' + error);
+    }
+  }
+
+  async getDetailsById(
+    id: string,
+    userId: string
+  ): Promise<RawSubjectWithStatsRow | null> {
+    try {
+      const result = await this.db.$queryRaw<RawSubjectWithStatsRow[]>`
+        SELECT
+          s.id           AS subject_id,
+          s.name         AS name,
+          s.description  AS description,
+          s.created_at   AS created_at,
+          s.updated_at   AS updated_at,
+          COALESCE(
+            (SELECT json_agg(js) FROM (
+                SELECT
+                  t.id           AS id,
+                  t.name         AS name,
+                  t.description  AS description,
+                  t.position     AS position,
+                  t.created_at   AS "createdAt",
+                  t.updated_at   AS "updatedAt",
+                  COUNT(c.id)    AS "contentCount",
+                  COALESCE(SUM(c.duration), 0) AS duration,
+                  (MAX(CASE WHEN ts.status = 'completed' THEN 1 ELSE 0 END) = 1) AS completed
+                FROM topics t
+                LEFT JOIN contents c
+                  ON c.topic_id = t.id
+                LEFT JOIN topic_study ts
+                  ON ts.topic_id = t.id
+                AND ts.user_id   = ${userId}
+                AND ts.status    = 'completed'
+                WHERE t.subject_id = s.id
+                GROUP BY t.id, t.name, t.description, t.position, t.created_at, t.updated_at
+                ORDER BY t.position
+            ) AS js),
+            '[]'
+          ) AS topics,
+          COUNT(DISTINCT t_all.id) AS total_topics,
+          COUNT(DISTINCT ts_all.topic_id) FILTER (WHERE ts_all.status = 'completed') AS completed_topics,
+          CASE
+            WHEN COUNT(DISTINCT t_all.id) > 0
+            THEN ROUND(
+              (COUNT(DISTINCT ts_all.topic_id) FILTER (WHERE ts_all.status = 'completed')::decimal
+                / COUNT(DISTINCT t_all.id))::numeric,
+              4
+            )
+            ELSE 0
+          END AS subject_progress,
+          COALESCE(SUM(c_all.duration), 0) AS subject_duration
+        FROM subjects s
+        LEFT JOIN topics t_all
+          ON t_all.subject_id = s.id
+        LEFT JOIN contents c_all
+          ON c_all.topic_id = t_all.id
+        LEFT JOIN topic_study ts_all
+          ON ts_all.topic_id = t_all.id
+          AND ts_all.user_id   = ${userId}
+          AND ts_all.status    = 'completed'
+        WHERE s.id = ${id}
+        GROUP BY
+          s.id, s.name, s.description, s.created_at, s.updated_at;
+      `;
+
+      return result[0] || null;
     } catch (error) {
       throw new Error('Error finding subject by id: ' + error);
     }

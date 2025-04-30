@@ -7,4 +7,7 @@ export interface TopicInterface {
   subject?: string;
   createdAt?: Date | null;
   updatedAt?: Date | null;
+  contentCount?: number;
+  duration?: number;
+  completed?: boolean;
 }

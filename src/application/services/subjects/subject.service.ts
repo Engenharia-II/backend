@@ -1,4 +1,5 @@
 import { SubjectInterface } from '@/domain/interfaces/subjects.interface';
+import { TopicInterface } from '@/domain/interfaces/topics.interface';
 import subjectRepository from '@/infrastructure/repositories/subject.repository';
 import { AppError } from '@/infrastructure/webserver/app-error';
 
@@ -21,6 +22,39 @@ export const getSubjectById = async (id: string) => {
       throw new AppError('Matéria não encontrada', 404);
     }
     return subject;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getSubjectDetailsById = async (id: string, userId: string) => {
+  try {
+    const raw = await subjectRepository.getDetailsById(id, userId);
+    if (!raw) {
+      throw new AppError('Matéria não encontrada', 404);
+    }
+    return {
+      id: raw.subject_id,
+      name: raw.name,
+      description: raw.description,
+      createdAt: raw.created_at,
+      updatedAt: raw.updated_at,
+      topics: raw.topics.map((t: TopicInterface) => ({
+        id: t.id,
+        name: t.name,
+        description: t.description,
+        position: t.position,
+        createdAt: t.createdAt,
+        updatedAt: t.updatedAt,
+        contentCount: t.contentCount,
+        duration: t.duration,
+        completed: t.completed
+      })),
+      totalTopics: Number(raw.total_topics),
+      completedTopics: Number(raw.completed_topics),
+      subjectProgress: Number(raw.subject_progress),
+      subjectDuration: Number(raw.subject_duration)
+    };
   } catch (error) {
     throw error;
   }

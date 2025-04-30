@@ -35,6 +35,17 @@ class SubjectsRoute {
     );
 
     fastifyWithZod.get(
+      '/:id/details',
+      {
+        preHandler: fastify.authenticate,
+        schema: {
+          params: subjectIdSchema
+        }
+      },
+      SubjectController.getSubjectDetailsById
+    );
+
+    fastifyWithZod.get(
       '/',
       {
         preHandler: fastify.authenticate
