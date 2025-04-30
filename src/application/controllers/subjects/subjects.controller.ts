@@ -6,7 +6,9 @@ import {
   deleteSubject,
   getSubjectById,
   listSubjects,
-  updateSubject
+  updateSubject,
+  listSubjectsWithProgress,
+  getSubjectDetailsById
 } from '@/application/services/subjects/subject.service';
 import { TopicInterface } from '@/domain/interfaces/topics.interface';
 import { listTopicsBySubject } from '@/application/services/topics/topic.service';
@@ -97,6 +99,33 @@ class SubjectController {
       const { id: subjectId } = request.params as { id: string };
       const topics = await listTopicsBySubject(subjectId);
       return reply.status(200).send(topics);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async listAllWithProgress(
+    request: FastifyRequest,
+    reply: FastifyReply
+  ): Promise<SubjectInterface[]> {
+    try {
+      const { id: userId } = request.user;
+      const subjects = await listSubjectsWithProgress(userId);
+      return reply.status(200).send(subjects);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async getSubjectDetailsById(
+    request: FastifyRequest,
+    reply: FastifyReply
+  ): Promise<SubjectInterface> {
+    try {
+      const { id } = request.params as { id: string };
+      const { id: userId } = request.user;
+      const subject = await getSubjectDetailsById(id, userId);
+      return reply.status(200).send(subject);
     } catch (error) {
       throw error;
     }

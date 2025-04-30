@@ -35,6 +35,17 @@ class SubjectsRoute {
     );
 
     fastifyWithZod.get(
+      '/:id/details',
+      {
+        preHandler: fastify.authenticate,
+        schema: {
+          params: subjectIdSchema
+        }
+      },
+      SubjectController.getSubjectDetailsById
+    );
+
+    fastifyWithZod.get(
       '/',
       {
         preHandler: fastify.authenticate
@@ -65,7 +76,7 @@ class SubjectsRoute {
       SubjectController.delete
     );
 
-    fastify.get(
+    fastifyWithZod.get(
       '/:id/topics',
       {
         schema: {
@@ -73,6 +84,14 @@ class SubjectsRoute {
         }
       },
       SubjectController.listTopicsBySubjectId
+    );
+
+    fastifyWithZod.get(
+      '/progress',
+      {
+        preHandler: fastify.authenticate
+      },
+      SubjectController.listAllWithProgress
     );
   }
 }
