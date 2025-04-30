@@ -2,6 +2,13 @@ import { DatabaseConnection } from '../database/connection';
 import { PrismaClient } from '@prisma/client';
 import { SubjectInterface } from '@/domain/interfaces/subjects.interface';
 
+export type RawSubjectProgressRow = {
+  subject_id: string;
+  name: string;
+  total_topics: bigint;
+  completed_topics: bigint;
+};
+
 export class SubjectRepository {
   private db: PrismaClient;
 
@@ -100,6 +107,30 @@ export class SubjectRepository {
       return subject;
     } catch (error) {
       throw new Error('Error deleting subject: ' + error);
+    }
+  }
+
+  async listAllWithProgress(userId: string) {
+    try {
+      const rows = await this.db.$queryRaw<RawSubjectProgressRow[]>`
+      SELECT 
+        s.id              AS subject_id,
+        s.name            AS name,
+        COUNT(t.id)       AS total_topics,
+        COUNT(ts.*)       AS completed_topics
+      FROM subjects s
+      LEFT JOIN topics t 
+        ON t.subject_id = s.id
+      LEFT JOIN topic_study ts 
+        ON ts.topic_id = t.id 
+       AND ts.user_id = ${userId} 
+       AND ts.status  = 'completed'
+      GROUP BY s.id, s.name
+      ORDER BY s.name;
+    `;
+      return rows;
+    } catch (error) {
+      throw new Error('Error listing limited subjects with topics: ' + error);
     }
   }
 }

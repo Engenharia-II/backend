@@ -65,3 +65,26 @@ export const deleteSubject = async (id: string) => {
     throw error;
   }
 };
+
+export const listSubjectsWithProgress = async (userId: string) => {
+  try {
+    const subjects = await subjectRepository.listAllWithProgress(userId);
+    if (!subjects) {
+      throw new AppError('Nenhuma matéria encontrada', 404);
+    }
+    return subjects.map((r) => {
+      const total = Number(r.total_topics);
+      const done = Number(r.completed_topics);
+
+      return {
+        subjectId: r.subject_id,
+        name: r.name,
+        totalTopics: total,
+        completedTopics: done,
+        progress: total > 0 ? parseFloat((done / total).toFixed(4)) : 0
+      };
+    });
+  } catch (error) {
+    throw error;
+  }
+};

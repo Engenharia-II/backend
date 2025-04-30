@@ -65,7 +65,7 @@ class SubjectsRoute {
       SubjectController.delete
     );
 
-    fastify.get(
+    fastifyWithZod.get(
       '/:id/topics',
       {
         schema: {
@@ -73,6 +73,14 @@ class SubjectsRoute {
         }
       },
       SubjectController.listTopicsBySubjectId
+    );
+
+    fastifyWithZod.get(
+      '/progress',
+      {
+        preHandler: fastify.authenticate
+      },
+      SubjectController.listAllWithProgress
     );
   }
 }
