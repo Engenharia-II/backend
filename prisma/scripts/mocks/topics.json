@@ -1,0 +1,97 @@
+[
+  {
+    "subjectName": "Estrutura de Dados",
+    "topics": [
+      {
+        "name": "Árvore Binária",
+        "description": "Conceitos e implementações de árvores binárias e suas variações.",
+        "position": 1
+      },
+      {
+        "name": "LinkedList",
+        "description": "Implementação e uso de listas encadeadas.",
+        "position": 2
+      },
+      {
+        "name": "Tabela Hash",
+        "description": "Fundamentos e implementação de tabelas hash.",
+        "position": 3
+      },
+      {
+        "name": "BubbleSort",
+        "description": "Algoritmo de ordenação BubbleSort.",
+        "position": 4
+      },
+      {
+        "name": "QuickSort",
+        "description": "Algoritmo de ordenação QuickSort.",
+        "position": 5
+      },
+      {
+        "name": "Counting Sort",
+        "description": "Algoritmo de ordenação Counting Sort.",
+        "position": 6
+      }
+    ]
+  },
+  {
+    "subjectName": "Programação WEB Iniciante",
+    "topics": [
+      {
+        "name": "HTML",
+        "description": "Fundamentos da linguagem de marcação HTML.",
+        "position": 1
+      },
+      {
+        "name": "CSS",
+        "description": "Estilização de páginas web com CSS.",
+        "position": 2
+      },
+      {
+        "name": "JavaScript",
+        "description": "Programação front-end com JavaScript.",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "subjectName": "Banco de Dados",
+    "topics": [
+      {
+        "name": "SGBD's",
+        "description": "Sistemas Gerenciadores de Banco de Dados.",
+        "position": 1
+      },
+      {
+        "name": "SQL",
+        "description": "Linguagem SQL para bancos de dados relacionais.",
+        "position": 2
+      },
+      {
+        "name": "No-SQL",
+        "description": "Bancos de dados não-relacionais.",
+        "position": 3
+      }
+    ]
+  },
+  {
+    "subjectName": "Inteligências Artificiais",
+    "topics": [
+      {
+        "name": "Redes Neurais",
+        "description": "Fundamentos de redes neurais artificiais.",
+        "position": 1
+      },
+      {
+        "name": "Modelos Generativos",
+        "description": "Modelos de IA generativa como GPT e DALL-E.",
+        "position": 2
+      },
+      {
+        "name": "Prompts Eficientes",
+        "description": "Técnicas de engenharia de prompts para IA.",
+        "position": 3
+      }
+    ]
+  }
+]
