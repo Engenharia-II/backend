@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Estrutura de Dados",
+    "description": "Estudo de diferentes formas de organizar e armazenar dados na memória, incluindo listas, pilhas, filas, árvores e grafos, e análise de complexidade de algoritmos associados."
+  },
+  {
+    "name": "Programação WEB Iniciante",
+    "description": "Introdução aos fundamentos do desenvolvimento web, cobrindo HTML, CSS, JavaScript e conceitos de HTTP, além de boas práticas para criar páginas e aplicações básicas."
+  },
+  {
+    "name": "Banco de Dados",
+    "description": "Conceitos de modelagem de dados e linguagens de consulta, focando em bancos relacionais (SQL) e não-relacionais (NoSQL), transações, normalização e performance."
+  },
+  {
+    "name": "Inteligências Artificiais",
+    "description": "Principais técnicas e algoritmos de IA, como aprendizado de máquina, redes neurais, processamento de linguagem natural e agentes inteligentes, com aplicações práticas."
+  }
+]
