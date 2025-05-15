@@ -1,6 +1,7 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
 import UsersController from '../controllers/users/users.controller';
+import UserStatisticsController from '../controllers/users/user-statistics.controller';
 import {
   idUserSchema,
   updateUserSchema
@@ -56,6 +57,14 @@ class UsersRoute {
         preHandler: fastify.authenticate
       },
       UsersController.updateLastAppAccess
+    );
+
+    fastifyWithZod.get(
+      '/statistics',
+      {
+        preHandler: fastify.authenticate
+      },
+      UserStatisticsController.getUserStatistics
     );
   }
 }
