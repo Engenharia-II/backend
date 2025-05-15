@@ -17,7 +17,22 @@ export class TopicAccessRepository {
         select: {
           userId: true,
           topicId: true,
-          lastAccess: true
+          lastAccess: true,
+          topic: {
+            select: {
+              id: true,
+              name: true,
+              description: true,
+              createdAt: true,
+              updatedAt: true,
+              subject: {
+                select: {
+                  name: true,
+                  id: true
+                }
+              }
+            }
+          }
         }
       });
       return topicsAccess;

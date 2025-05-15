@@ -1,6 +1,5 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
-import { idUserSchema } from '@/domain/validations/user.validation';
 import { idSubjectSchema } from '@/domain/validations/subject.validation';
 import SubjectAccessController from '../controllers/subject-access/subject-access.controller';
 
@@ -11,12 +10,9 @@ class SubjectAccessRoute {
     const fastifyWithZod = fastify.withTypeProvider<ZodTypeProvider>();
 
     fastifyWithZod.get(
-      '/:id',
+      '/',
       {
-        preHandler: fastify.authenticate,
-        schema: {
-          params: idUserSchema
-        }
+        preHandler: fastify.authenticate
       },
       SubjectAccessController.listLastUserSubjectAccess
     );
