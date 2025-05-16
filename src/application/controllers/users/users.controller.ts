@@ -40,7 +40,7 @@ class UsersController {
       const { name, email, password, confirmPassword } =
         request.body as UserInterface;
 
-      if (password !== confirmPassword) {
+      if (!!password && password !== confirmPassword) {
         throw new AppError('As senhas não coincidem', 400);
       }
       const updatedUser = await updateUser({
