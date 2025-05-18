@@ -702,5 +702,133 @@
         "tumbnailUrl": "https://img.youtube.com/vi/CUAQiUBgUMw/maxresdefault.jpg"
       }
     ]
+  },
+
+  {
+    "topicName": "Python - Mundo 1: Fundamentos",
+    "contents": [
+      {
+        "name": "Curso de Python 3 - Mundo 1: Fundamentos",
+        "description": "Curso criado pelo Prof. Gustavo Guanabara para o site CursoemVideo.com",
+        "duration": 42300,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=S9uPNppGsGo&list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6&index=1",
+        "tumbnailUrl": "https://img.youtube.com/vi/S9uPNppGsGo/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Python - Mundo 2: Estruturas de Controle",
+    "contents": [
+      {
+        "name": "Curso de Python 3 - Mundo 2: Estruturas de Controle",
+        "description": "Curso criado pelo Prof. Gustavo Guanabara para o site CursoemVideo.com",
+        "duration": 36900,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=nJkVHusJp6E&list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye&index=1",
+        "tumbnailUrl": "https://img.youtube.com/vi/nJkVHusJp6E/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Python - Mundo 3: Estruturas Compostas",
+    "contents": [
+      {
+        "name": "Curso de Python 3 - Mundo 3: Estruturas Compostas",
+        "description": "Curso criado pelo Prof. Gustavo Guanabara para o site CursoemVideo.com",
+        "duration": 45000,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH&index=1",
+        "tumbnailUrl": "https://img.youtube.com/vi/0LB3FSfjvao/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Módulo 1: Beginners",
+    "contents": [
+      {
+        "name": "Curso de Inglês para Iniciantes - Módulo 1: Beginners",
+        "description": "Curso para o site CursoemVideo.com",
+        "duration": 21600,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=QoTfOVYXmUc&list=PLHz_AreHm4dl8FBQLBC0bWSdL2FGmZnne&index=1",
+        "tumbnailUrl": "https://img.youtube.com/vi/QoTfOVYXmUc/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Módulo 2: Beginners",
+    "contents": [
+      {
+        "name": "Curso de Inglês para Iniciantes - Módulo 2: Beginners",
+        "description": "Curso criado para o site CursoemVideo.com",
+        "duration": 26100,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=f87cDZZne70&list=PLHz_AreHm4dlKB-34f5v4SYA9xiqoRfqs&index=1",
+        "tumbnailUrl": "https://img.youtube.com/vi/f87cDZZne70/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Módulo 3: Beginners",
+    "contents": [
+      {
+        "name": "Curso de Inglês para Iniciantes - Módulo 3: Beginners",
+        "description": "Curso criado para o site CursoemVideo.com",
+        "duration": 23400,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=04w5R2Ygd-A&list=PLHz_AreHm4dm26nThxChxAMEezu449Y42&index=1",
+        "tumbnailUrl": "https://img.youtube.com/vi/04w5R2Ygd-A/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Curso Completo - Java - Iniciantes",
+    "contents": [
+      {
+        "name": "Curso de Java para Iniciantes - Grátis, Completo",
+        "description": "Curso feito o site CursoemVideo.com",
+        "duration": 27000,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=sTX0UEplF54&list=PLHz_AreHm4dkI2ZdjTwZA4mPMxWTfNSpR&index=1&t=2s",
+        "tumbnailUrl": "https://img.youtube.com/vi/sTX0UEplF54/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Curso - JavaScript - Iniciantes",
+    "contents": [
+      {
+        "name": "Curso Grátis de JavaScript e ECMAScript para Iniciantes",
+        "description": "Curso feito o site CursoemVideo.com",
+        "duration": 29700,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=BXqUH86F-kA&list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1&index=2",
+        "tumbnailUrl": "https://img.youtube.com/vi/BXqUH86F-kA/maxresdefault.jpg"
+      }
+    ]
   }
 ]

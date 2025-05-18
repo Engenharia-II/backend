@@ -18,5 +18,21 @@
   {
     "name": "Paradigmas de Programação",
     "description": "Comparação entre paradigmas imperativo, funcional, lógico e orientado a objetos, enfatizando conceitos, vantagens e aplicações."
+  },
+  {
+    "name": "Python - Curso em Vídeo",
+    "description": "Fácil de aprender, com código limpo e organizado, Python vem ganhando cada vez mais espaço, e chegou a sua hora de aprender."
+  },
+  {
+    "name": "Inglês - Iniciante",
+    "description": "Está cansado de deixar oportunidades passarem porque você não domina o Inglês? Deseja expandir suas possibilidades profissionais e pessoais, se comunicar com pessoas ao redor do mundo e acessar um universo de conhecimento e cultura? Então você chegou ao lugar certo!"
+  },
+  {
+    "name": "Java para Iniciantes",
+    "description": "Curso de Java para Iniciantes, criado pelo Curso em Vídeo."
+  },
+  {
+    "name": "JavaScript e ECMAScript para Iniciantes",
+    "description": "Curso de linguagem JavaScript, voltado para iniciantes e para quem quiser aprender mais sobre ECMAScript, a versão padronizada do JS."
   }
 ]

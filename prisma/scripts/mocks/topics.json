@@ -123,5 +123,68 @@
         "position": 5
       }
     ]
+  },
+
+  {
+    "subjectName": "Python - Curso em Vídeo",
+    "topics": [
+      {
+        "name": "Python - Mundo 1: Fundamentos",
+        "description": "Introduz a linguagem, cobrindo instalação, sintaxe básica, variáveis, tipos primitivos, operadores e entrada/saída. Ideal para quem está dando os primeiros passos em programação.",
+        "position": 1
+      },
+      {
+        "name": "Python - Mundo 2: Estruturas de Controle",
+        "description": "Aprofunda-se em lógica condicional e laços de repetição, mostrando como usar if/elif/else, for, while e operadores lógicos para controlar o fluxo dos programas.",
+        "position": 2
+      },
+      {
+        "name": "Python - Mundo 3: Estruturas Compostas",
+        "description": "Explora coleções nativas como listas, tuplas, dicionários e conjuntos, além de técnicas de manipulação de dados e compreensão de listas para escrever código mais organizado e eficiente.",
+        "position": 3
+      }
+    ]
+  },
+
+  {
+    "subjectName": "Curso de Inglês para Iniciantes",
+    "topics": [
+      {
+        "name": "Módulo 1: Beginners",
+        "description": "No primeiro módulo do curso, ensinaremos tudo o que você precisa saber para começar a se comunicar com confiança e fluidez em situações cotidianas.",
+        "position": 1
+      },
+      {
+        "name": "Módulo 2: Beginners",
+        "description": "No segundo módulo do curso, ensinaremos tudo o que você precisa saber para começar a se comunicar com confiança e fluidez em situações cotidianas.",
+        "position": 2
+      },
+      {
+        "name": "Módulo 3: Beginners",
+        "description": "No terceiro módulo do curso, ensinaremos tudo o que você precisa saber para começar a se comunicar com confiança e fluidez em situações cotidianas.",
+        "position": 3
+      }
+    ]
+  },
+
+  {
+    "subjectName": "Java para Iniciantes",
+    "topics": [
+      {
+        "name": "Curso Completo - Java - Iniciantes",
+        "description": "Curso completo de Java para Iniciantes pelo Professor Gustavo Guanabara, para o canal e site Curso em Vídeo.",
+        "position": 1
+      }
+    ]
+  },
+  {
+    "subjectName": "JavaScript e ECMAScript para Iniciantes",
+    "topics": [
+      {
+        "name": "Curso - JavaScript - Iniciantes",
+        "description": "Curso de JavaScript para Iniciantes pelo Professor Gustavo Guanabara, para o canal e site Curso em Vídeo.",
+        "position": 1
+      }
+    ]
   }
 ]
