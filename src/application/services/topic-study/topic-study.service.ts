@@ -2,6 +2,7 @@ import { TopicStudyInterface } from '@/domain/interfaces/topic-study.interface';
 import topicStudyRepository from '@/infrastructure/repositories/topic-study.repository';
 import { getUserById } from '../user/user.service';
 import { getTopicById } from '../topics/topic.service';
+import updateSubjectStatusService from '../subject-study/update-subject-status.service';
 
 export const listTopicStudiesByUser = async (
   userId: string
@@ -23,6 +24,9 @@ export const updateTopicStudy = async ({
     await getUserById(userId);
     await getTopicById(topicId);
     await topicStudyRepository.update({ userId, topicId, finishedAt });
+
+    // Update subject status based on topic completion
+    await updateSubjectStatusService.updateSubjectStatus(topicId, userId);
   } catch (error) {
     throw error;
   }
@@ -36,6 +40,9 @@ export const removeTopicStudy = async ({
     await getUserById(userId);
     await getTopicById(topicId);
     await topicStudyRepository.delete({ userId, topicId });
+
+    // Update subject status based on topic completion
+    await updateSubjectStatusService.updateSubjectStatus(topicId, userId);
   } catch (error) {
     throw error;
   }

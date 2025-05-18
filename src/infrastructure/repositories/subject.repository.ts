@@ -193,16 +193,30 @@ export class SubjectRepository {
         s.id              AS subject_id,
         s.name            AS name,
         COUNT(t.id)       AS total_topics,
-        COUNT(ts.*)       AS completed_topics
+        COUNT(ts.*)       AS completed_topics,
+        ss.status         AS study_status
       FROM subjects s
       LEFT JOIN topics t 
         ON t.subject_id = s.id
       LEFT JOIN topic_study ts 
         ON ts.topic_id = t.id 
-       AND ts.user_id = ${userId} 
-       AND ts.status  = 'completed'
-      GROUP BY s.id, s.name
-      ORDER BY s.name;
+        AND ts.user_id = ${userId} 
+        AND ts.status = 'completed'
+      LEFT JOIN subject_study ss
+        ON ss.subject_id = s.id
+        AND ss.user_id = ${userId}
+      GROUP BY s.id, s.name, ss.status
+      ORDER BY 
+        -- First subjects with 'in_progress' status
+        CASE WHEN ss.status = 'in_progress' THEN 0
+             WHEN ss.status = 'completed' THEN 1
+             ELSE 2
+        END,
+        -- Then by progress percentage (descending)
+        CASE WHEN COUNT(t.id) > 0 
+             THEN CAST(COUNT(ts.*) AS FLOAT) / COUNT(t.id)
+             ELSE 0 
+        END DESC;
     `;
       return rows;
     } catch (error) {

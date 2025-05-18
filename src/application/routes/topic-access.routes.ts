@@ -1,6 +1,5 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
-import { idUserSchema } from '@/domain/validations/user.validation';
 import TopicAccessController from '../controllers/topic-access/topic-access.controller';
 import { idTopicSchema } from '@/domain/validations/topic.validation';
 
@@ -11,12 +10,9 @@ class TopicAccessRoute {
     const fastifyWithZod = fastify.withTypeProvider<ZodTypeProvider>();
 
     fastifyWithZod.get(
-      '/:id',
+      '/',
       {
-        preHandler: fastify.authenticate,
-        schema: {
-          params: idUserSchema
-        }
+        preHandler: fastify.authenticate
       },
       TopicAccessController.listLastUserTopicAccess
     );

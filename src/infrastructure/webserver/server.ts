@@ -11,6 +11,8 @@ import {
   validatorCompiler
 } from 'fastify-type-provider-zod';
 import fastifySwaggerUi from '@fastify/swagger-ui';
+import cors from '@fastify/cors';
+import helmet from '@fastify/helmet';
 
 interface CustomRouteHandler {
   prefix_route: string;
@@ -28,6 +30,26 @@ class App {
   }) {
     this.app = fastify({
       logger: true
+    });
+
+    this.app.register(cors, {
+      origin: process.env.FRONTEND_URL,
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      allowedHeaders: ['Content-Type', 'Authorization'],
+      exposedHeaders: ['Content-Type', 'Authorization'],
+      credentials: true,
+      maxAge: 86400
+    });
+
+    this.app.register(helmet, {
+      contentSecurityPolicy: {
+        directives: {
+          defaultSrc: ["'self'"],
+          scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+          objectSrc: ["'none'"],
+          upgradeInsecureRequests: []
+        }
+      }
     });
 
     this.app.setValidatorCompiler(validatorCompiler);
