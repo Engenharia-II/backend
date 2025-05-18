@@ -79,15 +79,22 @@ class SessionsController {
         throw new Error('User ID is required');
       }
 
-      const token = await reply.jwtSign({ id: user.id }, { expiresIn: '7d' });
+      const token = await reply.jwtSign(
+        { id: user.id },
+        { expiresIn: process.env.JWT_EXPIRATION }
+      );
 
-      reply.setCookie(config.cookie.cookieName, token, {
-        path: '/',
-        secure: true,
-        sameSite: true,
-        httpOnly: true,
-        maxAge: 7 * 24 * 60 * 60 // 7 days
-      });
+      reply.setCookie(
+        process.env.COOKIE_NAME || config.cookie.cookieName,
+        token,
+        {
+          path: '/',
+          secure: true,
+          sameSite: true,
+          httpOnly: true,
+          maxAge: 7 * 24 * 60 * 60 // 7 days
+        }
+      );
 
       return reply.code(200).send({
         message: 'Login realizado com sucesso.',
@@ -103,7 +110,7 @@ class SessionsController {
     reply: FastifyReply
   ): Promise<void> {
     try {
-      reply.clearCookie(config.cookie.cookieName, {
+      reply.clearCookie(process.env.COOKIE_NAME || config.cookie.cookieName, {
         path: '/',
         secure: true,
         sameSite: true,

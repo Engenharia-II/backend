@@ -10,7 +10,7 @@ class TopicAccessController {
     reply: FastifyReply
   ) {
     try {
-      const { id: userId } = request.params as { id: string };
+      const { id: userId } = request.user;
       const topics = await listLastTopicsAccessByUserId(userId);
       return reply.status(200).send(topics);
     } catch (error) {

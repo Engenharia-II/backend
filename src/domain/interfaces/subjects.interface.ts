@@ -26,4 +26,5 @@ export type RawSubjectProgressRow = {
   name: string;
   total_topics: bigint;
   completed_topics: bigint;
+  study_status: string | null;
 };

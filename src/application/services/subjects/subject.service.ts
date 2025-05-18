@@ -115,7 +115,8 @@ export const listSubjectsWithProgress = async (userId: string) => {
         name: r.name,
         totalTopics: total,
         completedTopics: done,
-        progress: total > 0 ? parseFloat((done / total).toFixed(4)) : 0
+        progress: total > 0 ? parseFloat((done / total).toFixed(4)) : 0,
+        status: r.study_status || null
       };
     });
   } catch (error) {

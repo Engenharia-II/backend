@@ -59,7 +59,7 @@ export const updateUser = async ({
   password
 }: UserInterface) => {
   try {
-    await getUserById(id as string);
+    const oldUser = await getUserById(id as string);
 
     const userEmail = await userRepository.findByEmail(email);
     if (userEmail && userEmail.id !== id) {
@@ -69,6 +69,8 @@ export const updateUser = async ({
     if (password) {
       const hashedPassword = await PasswordHash.hash(password);
       password = hashedPassword;
+    } else {
+      password = oldUser.password;
     }
 
     const user = await userRepository.update({ id, name, email, password });

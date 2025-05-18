@@ -11,9 +11,9 @@ export default fastifyPlugin(
       secret: config.cookie.secret
     });
     fastify.register(fastifyJwt, {
-      secret: config.jwt.secret,
+      secret: process.env.JWT_SECRET || config.jwt.secret,
       cookie: {
-        cookieName: config.cookie.cookieName,
+        cookieName: process.env.COOKIE_NAME || config.cookie.cookieName,
         signed: false
       }
     });
@@ -29,12 +29,15 @@ export default fastifyPlugin(
           const decoded = await req.jwtVerify<{ id: string }>();
           req.user = { id: decoded.id };
         } catch (err) {
-          reply.clearCookie(config.cookie.cookieName, {
-            path: '/',
-            secure: true,
-            sameSite: true,
-            httpOnly: true
-          });
+          reply.clearCookie(
+            process.env.COOKIE_NAME || config.cookie.cookieName,
+            {
+              path: '/',
+              secure: true,
+              sameSite: true,
+              httpOnly: true
+            }
+          );
           if (err instanceof Error) {
             throw new AppError(`Unauthorized, ${err.message}`, 401);
           }

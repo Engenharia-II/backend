@@ -10,7 +10,7 @@ class SubjectAccessController {
     reply: FastifyReply
   ) {
     try {
-      const { id: userId } = request.params as { id: string };
+      const { id: userId } = request.user;
       const subjects = await listLastSubjectsAccessByUserId(userId);
       return reply.status(200).send(subjects);
     } catch (error) {
