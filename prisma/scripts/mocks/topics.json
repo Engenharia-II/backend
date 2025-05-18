@@ -93,5 +93,35 @@
         "position": 3
       }
     ]
+  },
+  {
+    "subjectName": "Paradigmas de Programação",
+    "topics": [
+      {
+        "name": "Introdução aos Paradigmas de Programação",
+        "description": "Visão geral histórica e conceitual dos principais paradigmas: imperativo, estruturado, orientado a objetos, funcional, lógico e concorrente.",
+        "position": 1
+      },
+      {
+        "name": "Programação Imperativa vs Declarativa",
+        "description": "Saiba a diferença entre programação imperativa e declarativa e como usar esse conhecimento para ser um programador melhor, tornando seu código mais fácil de ser entendido por outras pessoas.",
+        "position": 2
+      },
+      {
+        "name": "Programação Orientada a Objetos",
+        "description": "Abstração, encapsulamento, herança e polimorfismo; princípios SOLID e design patterns básicos.",
+        "position": 3
+      },
+      {
+        "name": "Programação Funcional",
+        "description": "Funções de primeira classe, imutabilidade, recursão, higher-order functions, map/reduce/filter, lazy evaluation e efeitos colaterais.",
+        "position": 4
+      },
+      {
+        "name": "Programação Concorrente e Paralela",
+        "description": "Modelos de threads, atores e eventos; sincronização, exclusão mútua, mensagens assíncronas e conceitos de paralelismo em multicore.",
+        "position": 5
+      }
+    ]
   }
 ]

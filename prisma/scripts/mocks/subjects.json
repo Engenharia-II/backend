@@ -14,5 +14,9 @@
   {
     "name": "Inteligências Artificiais",
     "description": "Principais técnicas e algoritmos de IA, como aprendizado de máquina, redes neurais, processamento de linguagem natural e agentes inteligentes, com aplicações práticas."
+  },
+  {
+    "name": "Paradigmas de Programação",
+    "description": "Comparação entre paradigmas imperativo, funcional, lógico e orientado a objetos, enfatizando conceitos, vantagens e aplicações."
   }
 ]

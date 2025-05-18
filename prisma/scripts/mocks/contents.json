@@ -603,5 +603,104 @@
         "tumbnailUrl": "https://img.youtube.com/vi/1VDcke66TRE/maxresdefault.jpg"
       }
     ]
+  },
+  {
+    "topicName": "Introdução aos Paradigmas de Programação",
+    "contents": [
+      {
+        "name": "O que são Paradigmas de Programação",
+        "description": "Abordagem do que é um Paradigma de Programação, e os principais paradigmas empregados atualmente.",
+        "duration": 1020,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=UubmwhIbHUY&feature=youtu.be",
+        "tumbnailUrl": "https://img.youtube.com/vi/UubmwhIbHUY/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Programação Imperativa vs Declarativa",
+    "contents": [
+      {
+        "name": "Programação Imperativa vs Declarativa",
+        "description": "O vídeo mostra exemplos em javascript e python mas também de outras linguagens puramente declarativas.",
+        "duration": 300,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=qxknmtMU3mM",
+        "tumbnailUrl": "https://img.youtube.com/vi/qxknmtMU3mM/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Programação Orientada a Objetos",
+    "contents": [
+      {
+        "name": "Introdução a Programação Orientada a Objetos",
+        "description": "Explicando o que é Programação Orientada a Objetos de uma forma simples e didática, com exemplos.",
+        "duration": 180,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=pbb0jzXt_xA",
+        "tumbnailUrl": "https://img.youtube.com/vi/pbb0jzXt_xA/maxresdefault.jpg"
+      },
+      {
+        "name": "Curso de POO Java (Programação Orientada a Objetos)",
+        "description": "Curso completo de Programação Orientada a Objetos (POO) com a linguagem Java. Aborda os principais conceitos como Classes, Objetos, instanciamento, abstração, encapsulamento, herança, polimorfismo e muito mais. Criado pelo professor Gustavo Guanabara para o Curso em Vídeo, explica todos os conceitos de POO de uma maneira simples, objetiva e divertida.",
+        "duration": 57600,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=KlIL63MeyMY&list=PLHz_AreHm4dkqe2aR0tQK74m8SFe-aGsY",
+        "tumbnailUrl": "https://img.youtube.com/vi/KlIL63MeyMY/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Programação Funcional",
+    "contents": [
+      {
+        "name": "Descubra o poder da Programação Funcional: uma explicação fácil!",
+        "description": "Vamos explorar um novo horizonte: a programação funcional. Esse conceito tem ganhado cada vez mais espaço, especialmente em frameworks modernos de construção de interfaces declarativas, como React e SwiftUI.",
+        "duration": 780,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=7mVVIayE7A8",
+        "tumbnailUrl": "https://img.youtube.com/vi/7mVVIayE7A8/maxresdefault.jpg"
+      },
+      {
+        "name": "Programação Funcional com JavaScript | Pense como um DEV JS",
+        "description": "Entenda como pensar como um DEV JS, e como a Programação Funcional se liga nisso.",
+        "duration": 3000,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=LUJTzvsYY1A",
+        "tumbnailUrl": "https://img.youtube.com/vi/LUJTzvsYY1A/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Programação Concorrente e Paralela",
+    "contents": [
+      {
+        "name": "Programação Paralela x Concorrente",
+        "description": "Descomplicando Programação Paralela e Concorrente.",
+        "duration": 300,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=CUAQiUBgUMw",
+        "tumbnailUrl": "https://img.youtube.com/vi/CUAQiUBgUMw/maxresdefault.jpg"
+      }
+    ]
   }
 ]
