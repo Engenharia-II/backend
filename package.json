@@ -23,7 +23,8 @@
     "prisma:studio": "prisma studio",
     "prisma:reset": "prisma migrate reset",
     "prisma:seed": "prisma db seed",
-    "db:deploy": "npx prisma migrate deploy && npx prisma generate && npx prisma db seed"
+    "db:deploy": "npx prisma migrate deploy && npx prisma generate && npx prisma db seed",
+    "db:populate": "node prisma/scripts/populate.js"
   },
   "repository": {
     "type": "git",
