@@ -45,7 +45,7 @@ model Role {
 
 model Subject {
   id          String   @id @default(uuid())
-  name        String
+  name        String   @unique
   description String
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @default(now()) @map("updated_at")
@@ -71,6 +71,7 @@ model Topic {
   TopicStudy  TopicStudy[]
   TopicAccess TopicAccess[]
 
+  @@unique([name, subjectId])
   @@map("topics")
 }
 
@@ -91,6 +92,7 @@ model Content {
   topic        Topic          @relation(fields: [topicId], references: [id], onDelete: Cascade)
   SavedContent SavedContent[]
 
+  @@unique([name, topicId])
   @@map("contents")
 }
 

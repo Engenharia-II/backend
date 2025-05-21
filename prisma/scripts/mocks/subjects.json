@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Estrutura de Dados",
+    "description": "Estudo de diferentes formas de organizar e armazenar dados na memória, incluindo listas, pilhas, filas, árvores e grafos, e análise de complexidade de algoritmos associados."
+  },
+  {
+    "name": "Programação WEB Iniciante",
+    "description": "Introdução aos fundamentos do desenvolvimento web, cobrindo HTML, CSS, JavaScript e conceitos de HTTP, além de boas práticas para criar páginas e aplicações básicas."
+  },
+  {
+    "name": "Banco de Dados",
+    "description": "Conceitos de modelagem de dados e linguagens de consulta, focando em bancos relacionais (SQL) e não-relacionais (NoSQL), transações, normalização e performance."
+  },
+  {
+    "name": "Inteligências Artificiais",
+    "description": "Principais técnicas e algoritmos de IA, como aprendizado de máquina, redes neurais, processamento de linguagem natural e agentes inteligentes, com aplicações práticas."
+  },
+  {
+    "name": "Paradigmas de Programação",
+    "description": "Comparação entre paradigmas imperativo, funcional, lógico e orientado a objetos, enfatizando conceitos, vantagens e aplicações."
+  },
+  {
+    "name": "Python - Curso em Vídeo",
+    "description": "Fácil de aprender, com código limpo e organizado, Python vem ganhando cada vez mais espaço, e chegou a sua hora de aprender."
+  },
+  {
+    "name": "Curso de Inglês para Iniciantes",
+    "description": "Está cansado de deixar oportunidades passarem porque você não domina o Inglês? Deseja expandir suas possibilidades profissionais e pessoais, se comunicar com pessoas ao redor do mundo e acessar um universo de conhecimento e cultura? Então você chegou ao lugar certo!"
+  },
+  {
+    "name": "Java para Iniciantes",
+    "description": "Curso de Java para Iniciantes, criado pelo Curso em Vídeo."
+  },
+  {
+    "name": "JavaScript e ECMAScript para Iniciantes",
+    "description": "Curso de linguagem JavaScript, voltado para iniciantes e para quem quiser aprender mais sobre ECMAScript, a versão padronizada do JS."
+  }
+]

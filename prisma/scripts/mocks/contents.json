@@ -1,0 +1,834 @@
+[
+  {
+    "topicName": "Árvore Binária",
+    "contents": [
+      {
+        "name": "Árvores B em 4 minutos - Introdução",
+        "description": "Introdução rápida às árvores B.",
+        "duration": 240,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=FgWbADOG44s",
+        "tumbnailUrl": "https://img.youtube.com/vi/FgWbADOG44s/maxresdefault.jpg"
+      },
+      {
+        "name": "Árvores AVL em 5 minutos - Introdução e Pesquisa",
+        "description": "Introdução às árvores AVL e operações de pesquisa.",
+        "duration": 300,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=DB1HFCEdLxA",
+        "tumbnailUrl": "https://img.youtube.com/vi/DB1HFCEdLxA/maxresdefault.jpg"
+      },
+      {
+        "name": "Pesquisa binária em 4 minutos",
+        "description": "Explicação sobre pesquisa binária.",
+        "duration": 240,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=fDKIpRe8GW4",
+        "tumbnailUrl": "https://img.youtube.com/vi/fDKIpRe8GW4/maxresdefault.jpg"
+      },
+      {
+        "name": "Método fácil para percursos em Árvore Binária",
+        "description": "Aprenda sobre pré-ordem, em-ordem e pós-ordem em árvores binárias.",
+        "duration": 600,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=T4okc8dDlek",
+        "tumbnailUrl": "https://img.youtube.com/vi/T4okc8dDlek/maxresdefault.jpg"
+      },
+      {
+        "name": "Como implementar uma árvore binária",
+        "description": "Implementação de árvore binária em JavaScript/Python.",
+        "duration": 180,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/shorts/cbjH6Uu84x0",
+        "tumbnailUrl": "https://img.youtube.com/vi/cbjH6Uu84x0/maxresdefault.jpg"
+      },
+      {
+        "name": "Pré-encomende a travessia da árvore em 3 minutos",
+        "description": "Explicação sobre travessia pré-ordem.",
+        "duration": 180,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=1WxLM2hwL-U",
+        "tumbnailUrl": "https://img.youtube.com/vi/1WxLM2hwL-U/maxresdefault.jpg"
+      },
+      {
+        "name": "Percurso de árvore em ordem em 3 minutos",
+        "description": "Explicação sobre travessia em-ordem.",
+        "duration": 180,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=5dySuyZf9Qg",
+        "tumbnailUrl": "https://img.youtube.com/vi/5dySuyZf9Qg/maxresdefault.jpg"
+      },
+      {
+        "name": "Percurso de árvore pós-ordem em 2 minutos",
+        "description": "Explicação sobre travessia pós-ordem.",
+        "duration": 120,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=4zVdfkpcT6U",
+        "tumbnailUrl": "https://img.youtube.com/vi/4zVdfkpcT6U/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "LinkedList",
+    "contents": [
+      {
+        "name": "Listas encadeadas em 4 minutos",
+        "description": "Introdução às listas encadeadas.",
+        "duration": 240,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=F8AbOfQwl1c",
+        "tumbnailUrl": "https://img.youtube.com/vi/F8AbOfQwl1c/maxresdefault.jpg"
+      },
+      {
+        "name": "Listas Encadeadas - Entendendo o Conceito",
+        "description": "Explicação detalhada sobre listas encadeadas.",
+        "duration": 600,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=bqwIoNiHAuQ",
+        "tumbnailUrl": "https://img.youtube.com/vi/bqwIoNiHAuQ/maxresdefault.jpg"
+      },
+      {
+        "name": "Curso de Programação C - Lista encadeada",
+        "description": "Aula sobre lista encadeada em C.",
+        "duration": 1800,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=biTMaMxWLRc",
+        "tumbnailUrl": "https://img.youtube.com/vi/biTMaMxWLRc/maxresdefault.jpg"
+      },
+      {
+        "name": "Learn Linked Lists in 13 minutes",
+        "description": "Aprenda sobre listas encadeadas em 13 minutos.",
+        "duration": 780,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=N6dOwBde7-M",
+        "tumbnailUrl": "https://img.youtube.com/vi/N6dOwBde7-M/maxresdefault.jpg"
+      },
+      {
+        "name": "Listas encadeadas 0 - Conceito básico",
+        "description": "Conceitos básicos de listas encadeadas.",
+        "duration": 600,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=dnSAqA4VQUI",
+        "tumbnailUrl": "https://img.youtube.com/vi/dnSAqA4VQUI/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "Tabela Hash",
+    "contents": [
+      {
+        "name": "Tabelas Hash - Estrutura de Dados - Unicamp",
+        "description": "Aula sobre tabelas hash da Unicamp.",
+        "duration": 1800,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=Non0I_OSt9o",
+        "tumbnailUrl": "https://img.youtube.com/vi/Non0I_OSt9o/maxresdefault.jpg"
+      },
+      {
+        "name": "Tabelas de hash em 4 minutos",
+        "description": "Explicação rápida sobre tabelas hash.",
+        "duration": 240,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=knV86FlSXJ8",
+        "tumbnailUrl": "https://img.youtube.com/vi/knV86FlSXJ8/maxresdefault.jpg"
+      },
+      {
+        "name": "AED3 08 01 Tabelas Hash",
+        "description": "Aula sobre implementação de tabelas hash.",
+        "duration": 1800,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=6ZPBAtzhRuU",
+        "tumbnailUrl": "https://img.youtube.com/vi/6ZPBAtzhRuU/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "BubbleSort",
+    "contents": [
+      {
+        "name": "O que é e COMO FUNCIONA o BubbleSort (passo-a-passo)",
+        "description": "Explicação detalhada do algoritmo BubbleSort.",
+        "duration": 900,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=8RkZoBZNNgI",
+        "tumbnailUrl": "https://img.youtube.com/vi/8RkZoBZNNgI/maxresdefault.jpg"
+      },
+      {
+        "name": "Ordenação de bolhas em 2 minutos",
+        "description": "Explicação rápida do BubbleSort.",
+        "duration": 120,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=xli_FI7CuzA",
+        "tumbnailUrl": "https://img.youtube.com/vi/xli_FI7CuzA/maxresdefault.jpg"
+      },
+      {
+        "name": "Bubble Sort",
+        "description": "Visualização do algoritmo BubbleSort.",
+        "duration": 300,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=Cq7SMsQBEUw",
+        "tumbnailUrl": "https://img.youtube.com/vi/Cq7SMsQBEUw/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "QuickSort",
+    "contents": [
+      {
+        "name": "Lógica do algoritmo de ordenação quick sort",
+        "description": "Explicação da lógica por trás do QuickSort.",
+        "duration": 900,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=WP7KDljG6IM",
+        "tumbnailUrl": "https://img.youtube.com/vi/WP7KDljG6IM/maxresdefault.jpg"
+      },
+      {
+        "name": "Quick Sort Algorithm",
+        "description": "Explicação do algoritmo QuickSort.",
+        "duration": 300,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=Hoixgm4-P4M",
+        "tumbnailUrl": "https://img.youtube.com/vi/Hoixgm4-P4M/maxresdefault.jpg"
+      },
+      {
+        "name": "Quick Sort (LR pointers)",
+        "description": "Visualização do QuickSort com ponteiros LR.",
+        "duration": 300,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=8hEyhs3OV1w",
+        "tumbnailUrl": "https://img.youtube.com/vi/8hEyhs3OV1w/maxresdefault.jpg"
+      },
+      {
+        "name": "Quick Sort (LL pointers)",
+        "description": "Visualização do QuickSort com ponteiros LL.",
+        "duration": 300,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=9IqV6ZSjuaI",
+        "tumbnailUrl": "https://img.youtube.com/vi/9IqV6ZSjuaI/maxresdefault.jpg"
+      },
+      {
+        "name": "Quick Sort (Ternary Split)",
+        "description": "Visualização do QuickSort com divisão ternária.",
+        "duration": 300,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=q4wzJ_uw4aE",
+        "tumbnailUrl": "https://img.youtube.com/vi/q4wzJ_uw4aE/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "Counting Sort",
+    "contents": [
+      {
+        "name": "Learn Counting Sort Algorithm in LESS THAN 6 MINUTES!",
+        "description": "Aprenda o Counting Sort em menos de 6 minutos.",
+        "duration": 360,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=OKd534EWcdk",
+        "tumbnailUrl": "https://img.youtube.com/vi/OKd534EWcdk/maxresdefault.jpg"
+      },
+      {
+        "name": "Counting Sort",
+        "description": "Explicação sobre o algoritmo Counting Sort.",
+        "duration": 480,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=EItdcGhSLf4",
+        "tumbnailUrl": "https://img.youtube.com/vi/EItdcGhSLf4/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "HTML",
+    "contents": [
+      {
+        "name": "Aprenda HTML em apenas 5 MINUTOS (2023)",
+        "description": "Introdução rápida ao HTML.",
+        "duration": 300,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=5Hn58p-hYC0",
+        "tumbnailUrl": "https://img.youtube.com/vi/5Hn58p-hYC0/maxresdefault.jpg"
+      },
+      {
+        "name": "Curso de HTML Completo: Aula 01 - Criando novo projeto",
+        "description": "Primeira aula de curso completo de HTML.",
+        "duration": 1800,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=sj0p9O85AIg",
+        "tumbnailUrl": "https://img.youtube.com/vi/sj0p9O85AIg/maxresdefault.jpg"
+      },
+      {
+        "name": "Curso em Vídeo de HTML5 e CSS3",
+        "description": "Playlist do curso de HTML5 e CSS3.",
+        "duration": 36000,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=Ejkb_YpuHWs",
+        "tumbnailUrl": "https://img.youtube.com/vi/Ejkb_YpuHWs/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "CSS",
+    "contents": [
+      {
+        "name": "Curso em Vídeo de HTML5 e CSS3",
+        "description": "Playlist do curso de HTML5 e CSS3.",
+        "duration": 36000,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=Ejkb_YpuHWs",
+        "tumbnailUrl": "https://img.youtube.com/vi/Ejkb_YpuHWs/maxresdefault.jpg"
+      },
+      {
+        "name": "Curso CSS Completo: Aula 01 - O que é CSS e CSS Inline",
+        "description": "Primeira aula de curso completo de CSS.",
+        "duration": 1800,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=HtVRRHoASes",
+        "tumbnailUrl": "https://img.youtube.com/vi/HtVRRHoASes/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "JavaScript",
+    "contents": [
+      {
+        "name": "Curso Javascript Completo: Aula 01 - JS Interno e Externo",
+        "description": "Primeira aula de curso completo de JavaScript.",
+        "duration": 1800,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=vEwPnjqWQ-g",
+        "tumbnailUrl": "https://img.youtube.com/vi/vEwPnjqWQ-g/maxresdefault.jpg"
+      },
+      {
+        "name": "Aprenda JAVASCRIPT em apenas 5 MINUTOS (2023)",
+        "description": "Introdução rápida ao JavaScript.",
+        "duration": 300,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=WRlfwBof66s",
+        "tumbnailUrl": "https://img.youtube.com/vi/WRlfwBof66s/maxresdefault.jpg"
+      },
+      {
+        "name": "Curso de JavaScript - Teaser",
+        "description": "Introdução ao curso de JavaScript.",
+        "duration": 600,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=1-w1RfGIov4",
+        "tumbnailUrl": "https://img.youtube.com/vi/1-w1RfGIov4/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "SGBD's",
+    "contents": [
+      {
+        "name": "Sistema Gerenciador de Banco de Dados SGBD",
+        "description": "Explicação sobre SGBDs.",
+        "duration": 600,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=2oFepn1KXQM",
+        "tumbnailUrl": "https://img.youtube.com/vi/2oFepn1KXQM/maxresdefault.jpg"
+      },
+      {
+        "name": "O que é BANCO DE DADOS e porque INTERESSA APRENDER isso?",
+        "description": "Importância de aprender sobre bancos de dados.",
+        "duration": 900,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=XfO3TRvESBo",
+        "tumbnailUrl": "https://img.youtube.com/vi/XfO3TRvESBo/maxresdefault.jpg"
+      },
+      {
+        "name": "Você sabe a diferença entre Banco de Dados e SGBD?",
+        "description": "Diferença entre banco de dados e SGBD.",
+        "duration": 600,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=yQkp1Eze400",
+        "tumbnailUrl": "https://img.youtube.com/vi/yQkp1Eze400/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "SQL",
+    "contents": [
+      {
+        "name": "SQL Tutorial - Full Database Course for Beginners",
+        "description": "Curso completo de SQL para iniciantes.",
+        "duration": 14400,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=HXV3zeQKqGY",
+        "tumbnailUrl": "https://img.youtube.com/vi/HXV3zeQKqGY/maxresdefault.jpg"
+      },
+      {
+        "name": "Você sabe a diferença entre Banco de Dados e SGBD?",
+        "description": "Diferença entre banco de dados e SGBD.",
+        "duration": 600,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=yQkp1Eze400",
+        "tumbnailUrl": "https://img.youtube.com/vi/yQkp1Eze400/maxresdefault.jpg"
+      },
+      {
+        "name": "O que é SQL?",
+        "description": "Introdução à linguagem SQL.",
+        "duration": 600,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=3YYi-c4E1aI",
+        "tumbnailUrl": "https://img.youtube.com/vi/3YYi-c4E1aI/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "No-SQL",
+    "contents": [
+      {
+        "name": "NoSQL // Dicionário do Programador",
+        "description": "Explicação sobre bancos NoSQL.",
+        "duration": 600,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=1B64oqE8PLs",
+        "tumbnailUrl": "https://img.youtube.com/vi/1B64oqE8PLs/maxresdefault.jpg"
+      },
+      {
+        "name": "Quando NÃO usar SQL?",
+        "description": "Casos onde bancos NoSQL são mais adequados.",
+        "duration": 600,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=o8HEfReQ6co",
+        "tumbnailUrl": "https://img.youtube.com/vi/o8HEfReQ6co/maxresdefault.jpg"
+      },
+      {
+        "name": "MongoDB (O Banco de Dados NoSQL mais Legal)",
+        "description": "Introdução ao MongoDB.",
+        "duration": 600,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=4dTI1mVLX3I",
+        "tumbnailUrl": "https://img.youtube.com/vi/4dTI1mVLX3I/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "Redes Neurais",
+    "contents": [
+      {
+        "name": "But what is a neural network? | Deep learning chapter 1",
+        "description": "Explicação sobre o que são redes neurais.",
+        "duration": 1200,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "tumbnailUrl": "https://img.youtube.com/vi/aircAruvnKk/maxresdefault.jpg"
+      },
+      {
+        "name": "Redes Neurais e Machine Learning | Nerdologia Tech",
+        "description": "Explicação sobre redes neurais e machine learning.",
+        "duration": 600,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=1_c_MA1F-vU",
+        "tumbnailUrl": "https://img.youtube.com/vi/1_c_MA1F-vU/maxresdefault.jpg"
+      },
+      {
+        "name": "Inteligência Artificial destruindo no dinossauro da Google! (Rede Neural)",
+        "description": "Demonstração de rede neural jogando o jogo do dinossauro.",
+        "duration": 900,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=NZlIYr1slAk",
+        "tumbnailUrl": "https://img.youtube.com/vi/NZlIYr1slAk/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "Modelos Generativos",
+    "contents": [
+      {
+        "name": "Curso Grátis de Inteligência Artificial",
+        "description": "Curso introdutório sobre IA.",
+        "duration": 18000,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=jQMbuK6URws",
+        "tumbnailUrl": "https://img.youtube.com/vi/jQMbuK6URws/maxresdefault.jpg"
+      },
+      {
+        "name": "IA generativa, LLM, prompt: o glossário básico para entender a inteligência artificial",
+        "description": "Glossário de termos de IA generativa.",
+        "duration": 900,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=itSueS-lGqo",
+        "tumbnailUrl": "https://img.youtube.com/vi/itSueS-lGqo/maxresdefault.jpg"
+      },
+      {
+        "name": "Qual a diferença entre Inteligência Artificial, Machine Learning e Deep Learning",
+        "description": "Diferenças entre IA, ML e DL.",
+        "duration": 600,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=wFYAV_Wk5bc",
+        "tumbnailUrl": "https://img.youtube.com/vi/wFYAV_Wk5bc/maxresdefault.jpg"
+      },
+      {
+        "name": "Machine Learning Explicado",
+        "description": "Explicação sobre machine learning.",
+        "duration": 600,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=0PrOA2JK6GQ",
+        "tumbnailUrl": "https://img.youtube.com/vi/0PrOA2JK6GQ/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "Prompts Eficientes",
+    "contents": [
+      {
+        "name": "PROMPT ENGINEERING: Hype ou profissão do Futuro?",
+        "description": "Discussão sobre engenharia de prompts.",
+        "duration": 900,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=98qF1uXLZpg",
+        "tumbnailUrl": "https://img.youtube.com/vi/98qF1uXLZpg/maxresdefault.jpg"
+      },
+      {
+        "name": "Tutorial de engenharia imediata - respostas Master ChatGPT e LLM",
+        "description": "Tutorial sobre engenharia de prompts.",
+        "duration": 1800,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=_ZvnD73m40o",
+        "tumbnailUrl": "https://img.youtube.com/vi/_ZvnD73m40o/maxresdefault.jpg"
+      },
+      {
+        "name": "Engenharia de Prompt: O Guia Definitivo",
+        "description": "Guia completo sobre engenharia de prompts.",
+        "duration": 1200,
+        "isFree": true,
+        "publicationDate": "2023-01-01T00:00:00.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=1VDcke66TRE",
+        "tumbnailUrl": "https://img.youtube.com/vi/1VDcke66TRE/maxresdefault.jpg"
+      }
+    ]
+  },
+  {
+    "topicName": "Introdução aos Paradigmas de Programação",
+    "contents": [
+      {
+        "name": "O que são Paradigmas de Programação",
+        "description": "Abordagem do que é um Paradigma de Programação, e os principais paradigmas empregados atualmente.",
+        "duration": 1020,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=UubmwhIbHUY&feature=youtu.be",
+        "tumbnailUrl": "https://img.youtube.com/vi/UubmwhIbHUY/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Programação Imperativa vs Declarativa",
+    "contents": [
+      {
+        "name": "Programação Imperativa vs Declarativa",
+        "description": "O vídeo mostra exemplos em javascript e python mas também de outras linguagens puramente declarativas.",
+        "duration": 300,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=qxknmtMU3mM",
+        "tumbnailUrl": "https://img.youtube.com/vi/qxknmtMU3mM/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Programação Orientada a Objetos",
+    "contents": [
+      {
+        "name": "Introdução a Programação Orientada a Objetos",
+        "description": "Explicando o que é Programação Orientada a Objetos de uma forma simples e didática, com exemplos.",
+        "duration": 180,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=pbb0jzXt_xA",
+        "tumbnailUrl": "https://img.youtube.com/vi/pbb0jzXt_xA/maxresdefault.jpg"
+      },
+      {
+        "name": "Curso de POO Java (Programação Orientada a Objetos)",
+        "description": "Curso completo de Programação Orientada a Objetos (POO) com a linguagem Java. Aborda os principais conceitos como Classes, Objetos, instanciamento, abstração, encapsulamento, herança, polimorfismo e muito mais. Criado pelo professor Gustavo Guanabara para o Curso em Vídeo, explica todos os conceitos de POO de uma maneira simples, objetiva e divertida.",
+        "duration": 57600,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=KlIL63MeyMY&list=PLHz_AreHm4dkqe2aR0tQK74m8SFe-aGsY",
+        "tumbnailUrl": "https://img.youtube.com/vi/KlIL63MeyMY/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Programação Funcional",
+    "contents": [
+      {
+        "name": "Descubra o poder da Programação Funcional: uma explicação fácil!",
+        "description": "Vamos explorar um novo horizonte: a programação funcional. Esse conceito tem ganhado cada vez mais espaço, especialmente em frameworks modernos de construção de interfaces declarativas, como React e SwiftUI.",
+        "duration": 780,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=7mVVIayE7A8",
+        "tumbnailUrl": "https://img.youtube.com/vi/7mVVIayE7A8/maxresdefault.jpg"
+      },
+      {
+        "name": "Programação Funcional com JavaScript | Pense como um DEV JS",
+        "description": "Entenda como pensar como um DEV JS, e como a Programação Funcional se liga nisso.",
+        "duration": 3000,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=LUJTzvsYY1A",
+        "tumbnailUrl": "https://img.youtube.com/vi/LUJTzvsYY1A/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Programação Concorrente e Paralela",
+    "contents": [
+      {
+        "name": "Programação Paralela x Concorrente",
+        "description": "Descomplicando Programação Paralela e Concorrente.",
+        "duration": 300,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=CUAQiUBgUMw",
+        "tumbnailUrl": "https://img.youtube.com/vi/CUAQiUBgUMw/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Python - Mundo 1: Fundamentos",
+    "contents": [
+      {
+        "name": "Curso de Python 3 - Mundo 1: Fundamentos",
+        "description": "Curso criado pelo Prof. Gustavo Guanabara para o site CursoemVideo.com",
+        "duration": 42300,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=S9uPNppGsGo&list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6&index=1",
+        "tumbnailUrl": "https://img.youtube.com/vi/S9uPNppGsGo/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Python - Mundo 2: Estruturas de Controle",
+    "contents": [
+      {
+        "name": "Curso de Python 3 - Mundo 2: Estruturas de Controle",
+        "description": "Curso criado pelo Prof. Gustavo Guanabara para o site CursoemVideo.com",
+        "duration": 36900,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=nJkVHusJp6E&list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye&index=1",
+        "tumbnailUrl": "https://img.youtube.com/vi/nJkVHusJp6E/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Python - Mundo 3: Estruturas Compostas",
+    "contents": [
+      {
+        "name": "Curso de Python 3 - Mundo 3: Estruturas Compostas",
+        "description": "Curso criado pelo Prof. Gustavo Guanabara para o site CursoemVideo.com",
+        "duration": 45000,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH&index=1",
+        "tumbnailUrl": "https://img.youtube.com/vi/0LB3FSfjvao/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Módulo 1: Beginners",
+    "contents": [
+      {
+        "name": "Curso de Inglês para Iniciantes - Módulo 1: Beginners",
+        "description": "Curso para o site CursoemVideo.com",
+        "duration": 21600,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=QoTfOVYXmUc&list=PLHz_AreHm4dl8FBQLBC0bWSdL2FGmZnne&index=1",
+        "tumbnailUrl": "https://img.youtube.com/vi/QoTfOVYXmUc/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Módulo 2: Beginners",
+    "contents": [
+      {
+        "name": "Curso de Inglês para Iniciantes - Módulo 2: Beginners",
+        "description": "Curso criado para o site CursoemVideo.com",
+        "duration": 26100,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=f87cDZZne70&list=PLHz_AreHm4dlKB-34f5v4SYA9xiqoRfqs&index=1",
+        "tumbnailUrl": "https://img.youtube.com/vi/f87cDZZne70/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Módulo 3: Beginners",
+    "contents": [
+      {
+        "name": "Curso de Inglês para Iniciantes - Módulo 3: Beginners",
+        "description": "Curso criado para o site CursoemVideo.com",
+        "duration": 23400,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=04w5R2Ygd-A&list=PLHz_AreHm4dm26nThxChxAMEezu449Y42&index=1",
+        "tumbnailUrl": "https://img.youtube.com/vi/04w5R2Ygd-A/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Curso Completo - Java - Iniciantes",
+    "contents": [
+      {
+        "name": "Curso de Java para Iniciantes - Grátis, Completo",
+        "description": "Curso feito o site CursoemVideo.com",
+        "duration": 27000,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=sTX0UEplF54&list=PLHz_AreHm4dkI2ZdjTwZA4mPMxWTfNSpR&index=1&t=2s",
+        "tumbnailUrl": "https://img.youtube.com/vi/sTX0UEplF54/maxresdefault.jpg"
+      }
+    ]
+  },
+
+  {
+    "topicName": "Curso - JavaScript - Iniciantes",
+    "contents": [
+      {
+        "name": "Curso Grátis de JavaScript e ECMAScript para Iniciantes",
+        "description": "Curso feito o site CursoemVideo.com",
+        "duration": 29700,
+        "isFree": true,
+        "publicationDate": "2025-05-18T14:37:25.000Z",
+        "type": "course",
+        "url": "https://www.youtube.com/watch?v=BXqUH86F-kA&list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1&index=2",
+        "tumbnailUrl": "https://img.youtube.com/vi/BXqUH86F-kA/maxresdefault.jpg"
+      }
+    ]
+  }
+]

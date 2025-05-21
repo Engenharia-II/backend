@@ -25,4 +25,4 @@ EXPOSE 3333
 EXPOSE 5555
 
 # Start the application and run migrations/seeding
-CMD ["sh", "-c", "npm run db:deploy && npm run dev"]
+CMD ["sh", "-c", "npm run db:deploy && npm run db:populate && npm run dev"]
